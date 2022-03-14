@@ -6,6 +6,22 @@ append head
   //- add page specific js
   script(src="/javascripts/login.js" type="module" defer)
 
+include utils.pug
+
 block content
   h1= title
-  p Welcome to your Project Skeleton login page
+  p Welcome to your Project Skeleton signUp page
+  +validationErrorSummary(errors)
+  form(action='/login' method='post')
+    input(type='hidden' name='_csrf' value=csrfToken)
+    //- input(type='text' name='username' value=user.username placeholder='username' required)
+    br
+    input(type='email' name='email' value=email placeholder='email' required)
+    br
+    input(type='password' name='password' placeholder='password' required)
+    br
+    button(type='submit' ) Login
+  br
+  a(href='/signUp' id='signUpBtn') Don't have an account?
+  br
+  a(href='/demo' id='demoBtn') Demo User
