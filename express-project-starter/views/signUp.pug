@@ -9,3 +9,17 @@ append head
 block content
   h1= title
   p Welcome to your Project Skeleton signUp page
+  form(action='/signUp' method='post')
+    input(type='hidden' name='_csrf' value=csrfToken)
+    input(type='text' name='username' value=user.username placeholder='username' required)
+    br
+    input(type='email' name='email' value=user.email placeholder='email' required)
+    br
+    input(type='password' name='password' placeholder='password' required)
+    input(type='password' name='confirmPassword' placeholder='confirm password' required)
+    br
+    button(type='submit' ) Sign Up
+  br
+  a(href='/login' id='loginBtn') Already have an account?
+  br
+  a(href='/demo' id='demoBtn') Demo User
