@@ -6,9 +6,12 @@ append head
   //- add page specific js
   script(src="/javascripts/signUp.js" type="module" defer)
 
+include utils.pug
+
 block content
   h1= title
   p Welcome to your Project Skeleton signUp page
+  +validationErrorSummary(errors)
   form(action='/signUp' method='post')
     input(type='hidden' name='_csrf' value=csrfToken)
     input(type='text' name='username' value=user.username placeholder='username' required)
