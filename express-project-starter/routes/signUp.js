@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 const { check, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
+const { loginUser } = require('../auth');
+
 
 const db = require('../db/models');
 
@@ -68,7 +70,7 @@ router.post('/', csrfProtection, userValidators, asyncHandler(async (req, res) =
     const hashedPassword = await bcrypt.hash(password, 12);
     user.hashedPassword = hashedPassword;
     await user.save();
-    // todo - log the user in
+    loginUser(req, res, user);
     res.redirect('/');
   } else {
     const errors = validatorErrors.array().map((error) => error.msg);
