@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const { check, validationResult } = require('express-validator');
+const bcrypt = require('bcryptjs');
 
 const db = require('../db/models');
 
@@ -9,7 +10,7 @@ const { csrfProtection, asyncHandler } = require('./utils');
 /* GET sign up page. */
 router.get('/', csrfProtection, (req, res) => {
   const user = db.User.build();
-  res.render('signUp', { title: 'a/A Express Skeleton Home ===> signUp', user, csrfToken: req.csrfToken() });
+  res.render('signUp', { title: 'Sign Up', user, csrfToken: req.csrfToken() });
 });
 
 const userValidators = [
@@ -55,6 +56,29 @@ router.post('/', csrfProtection, userValidators, asyncHandler(async (req, res) =
     email,
     password
   } = req.body;
+
+  const user = await db.User.build({
+    username,
+    email
+  });
+
+  const validatorErrors = validationResult(req);
+
+  if(validatorErrors.isEmpty()) {
+    const hashedPassword = await bcrypt.hash(password, 12);
+    user.hashedPassword = hashedPassword;
+    await user.save();
+    // todo - log the user in
+    res.redirect('/');
+  } else {
+    const errors = validatorErrors.array().map((error) => error.msg);
+    res.render('signUp', {
+      title: 'Sign Up',
+      user,
+      errors,
+      csrfToken: req.csrfToken()
+    });
+  }
 }));
 
 module.exports = router;
