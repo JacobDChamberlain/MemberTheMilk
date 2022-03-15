@@ -59,8 +59,18 @@ window.addEventListener("load", (event)=>{
 
   addListButton.addEventListener('click', e => {
     e.preventDefault();
-    
-    createElement
+    const inputField = document.getElementById('addListInput');
+
+    inputField.type = "";
+
+
+    // addListButton
+
+
+
+
+    // const blah = document.createElement('option')
+    // listLists.appendChild(blah);
   })
 
 
