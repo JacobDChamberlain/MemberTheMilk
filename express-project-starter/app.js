@@ -55,7 +55,7 @@ app.use('/application', applicationRouter);
 app.use('/login', loginRouter);
 app.use('/signUp', signUpRouter);
 app.use('/splash', splashRouter);
-app.use('/asdf', demoUserRouter)
+app.use('/demo', demoUserRouter)
 //* Use Routers End Here
 
 // catch 404 and forward to error handler
