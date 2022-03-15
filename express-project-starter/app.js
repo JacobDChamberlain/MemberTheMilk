@@ -16,6 +16,7 @@ const applicationRouter = require('./routes/application');
 const loginRouter = require('./routes/login');
 const signUpRouter = require('./routes/signUp');
 const splashRouter = require('./routes/splash');
+// const demoUserRouter = require('./routes/demoUser')
 //* Require Routers End Here
 
 const app = express();
@@ -28,6 +29,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser(sessionSecret));
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 // set up session middleware
 const store = new SequelizeStore({ db: sequelize });
@@ -53,6 +55,7 @@ app.use('/application', applicationRouter);
 app.use('/login', loginRouter);
 app.use('/signUp', signUpRouter);
 app.use('/splash', splashRouter);
+// app.use('/asdf', demoUserRouter)
 //* Use Routers End Here
 
 // catch 404 and forward to error handler

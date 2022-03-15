@@ -8,12 +8,10 @@ const { csrfProtection, asyncHandler } = require('./utils');
 
 
 
-router.post('/', csrfProtection, asyncHandler(async (req, res) => {
-    const {
-        email,
-        password,
-    } = req.body;
+router.get('/', csrfProtection, asyncHandler(async (req, res) => {
 
+    const email = 'demoUser@gmail.com';
+    const password = 'password'
 
     const user = await db.User.findOne({ where: { email } });
     if (user) {
@@ -25,3 +23,5 @@ router.post('/', csrfProtection, asyncHandler(async (req, res) => {
     }
 
 }));
+
+module.exports = router
