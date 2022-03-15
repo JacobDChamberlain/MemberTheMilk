@@ -1,6 +1,7 @@
 window.addEventListener("load", (event)=>{
   console.log("hello from application ===> javascript")
 
+  //* Add Task Functionality
   const logoutUser = document.getElementById("logoutBtn")
 
   logoutUser.addEventListener("click", e => {
@@ -51,4 +52,21 @@ window.addEventListener("load", (event)=>{
     }
   })
 
-})
+  //!-------------------------------------------------------------------------------
+  //* List Functionality
+  const listLists = document.getElementById('listLists');
+  const addListButton = document.getElementById('addListBtn');
+
+  addListButton.addEventListener('click', e => {
+    e.preventDefault();
+    
+    createElement
+  })
+
+
+
+
+
+
+
+}); //? End of application.js
