@@ -9,4 +9,19 @@ append head
 block content
   h1= title
   p Welcome to your Project Skeleton application page
-  button(id='logoutBtn') Sign Out
+  div(id='applicationPageContainer')
+    div(id='navbarLeft')
+      select(id='inboxDropDown')
+        option(id='allTaskList') All Tasks
+        option(id='todayList') Today
+        option(id='tomorrowList') Tomorrow
+        option(id='weekList') This Week
+        option(id='trashList') Trash
+      br
+      select(id='listLists')
+        option(id='personal') Personal
+        option(id='work') Work
+      br
+    div(id='tasksPage')
+      button(id='logoutBtn') Sign Out
+    div(id='listSummaryPage')
