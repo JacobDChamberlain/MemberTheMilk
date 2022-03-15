@@ -1,15 +1,21 @@
 #loginBtn {
   box-sizing: border-box;
   font-size: 20px;
-  color: rgb(39, 151, 151);
-  padding-left: 25px;
-  padding-right: 25px;
+  color: black;
+  padding-left: 45px;
+  padding-right: 45px;
   padding-top: 10px;
   padding-bottom: 10px;
-  border-color: aqua;
-  border-radius: 10%;
+  border-color: black;
+  border-radius: 5%;
   box-shadow: 2px 1px 1px gray;
+  transition: border-color 1s;
+  transition: color .5s;
+}
 
+#loginBtn:hover{
+  color:blue;
+  border-color: blue;
 }
 body{
   display: flex;
@@ -42,21 +48,29 @@ body{
 }
 
 #signUpBtn{
-  color: rgb(39, 151, 151);
-  border-color: aqua;
+color: black;
+  border-color: black;
   box-sizing: border-box;
   font-size: 20px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border-radius: 10%;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5%;
   box-shadow: 2px 1px 1px gray;
+  transition: border-color 1s;
+  transition: color .5s;
 
+}
+#signUpBtn:hover {
+  color:blue;
+  border-color: blue;
 }
 
 #splashImage{
   display: flex;
   flex-direction: center;
   justify-content: center;
+ 
 }
+
