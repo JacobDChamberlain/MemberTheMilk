@@ -1,3 +1,90 @@
-body {
-  background-color: blueviolet;
+#loginBtn {
+  box-sizing: border-box;
+  font-size: 20px;
+  color: black;
+  padding-left: 45px;
+  padding-right: 45px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-color: black;
+  border-radius: 5%;
+  box-shadow: 2px 1px 1px gray;
+  transition: border-color 1s;
+  transition: color .5s;
 }
+
+
+#loginBtn:hover{
+  color:blue;
+  border-color: blue;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px;
+
+  background-image: url(./ghibli-wallhaven.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#welcomeText{
+  font-size: 40px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+}
+
+#welcomeBox{
+  padding: 20px;
+  border: solid black;
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 2px 1px 1px gray;
+  width: 600px;
+  height: 200px;
+}
+
+#theBox{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#loginInfo{
+  display: flex;
+  flex-direction: center;
+  justify-content: space-evenly;
+}
+
+#signUpBtn{
+color: black;
+  border-color: black;
+  box-sizing: border-box;
+  font-size: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5%;
+  box-shadow: 2px 1px 1px gray;
+  transition: border-color 1s;
+  transition: color .5s;
+
+}
+#signUpBtn:hover {
+  color:blue;
+  border-color: blue;
+}
+
+#splashImage{
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+ 
+}
+
