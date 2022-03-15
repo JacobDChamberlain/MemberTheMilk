@@ -8,7 +8,7 @@ window.addEventListener("load", (event) => {
 
   const demoUser = document.getElementById("demoBtn")
   demoUser.addEventListener("click", e => {
-    window.location.href = "/asdf"
+    window.location.href = "/demo"
   })
 
 
