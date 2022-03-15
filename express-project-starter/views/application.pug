@@ -11,6 +11,7 @@ block content
   p Welcome to your Project Skeleton application page
   div(id='applicationPageContainer')
     div(id='navbarLeft')
+      label(for='inboxDropDown') Inbox 📮
       select(id='inboxDropDown')
         option(id='allTaskList') All Tasks
         option(id='todayList') Today
@@ -18,10 +19,33 @@ block content
         option(id='weekList') This Week
         option(id='trashList') Trash
       br
-      select(id='listLists')
-        option(id='personal') Personal
-        option(id='work') Work
+
+      label(for='inboxDropDown') Lists 📃
+      div(id='sadfasd')
+        select(id='listLists' innerText='list')
+          option() asdfasdfdsafsadsf
+        button(id='addListBtn' innerText='Add') Add
+      input(type='hidden' id='addListInput' placeholder='Add List')
+          //- This is for the user to add *Build in the End*
       br
+
     div(id='tasksPage')
+      //- img(src='./blahBlahBlah')
       button(id='logoutBtn') Sign Out
+      form(action='/application' method='post')
+      //- search(id='searchTask')
+      button(id='incompleteBtn') Incomplete 
+      button(id='completeBtn') Completed 
+      br
+      input(id='addTaskInput' required) 
+      button(id='addTaskBtn') Add Task 
+
+      div(id='taskDisplay')
+        //- input(type='checkbox' name='task' checked) 
+
+
+
+      br
     div(id='listSummaryPage')
+      textarea(id='currListName' placeholder= 'listCategory')
+
