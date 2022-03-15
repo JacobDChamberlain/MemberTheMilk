@@ -22,6 +22,24 @@ block content
         option(id='personal') Personal
         option(id='work') Work
       br
+
     div(id='tasksPage')
+      //- img(src='./blahBlahBlah')
       button(id='logoutBtn') Sign Out
+      form(action='/application' method='post')
+      //- search(id='searchTask')
+      button(id='incompleteBtn') Incomplete 
+      button(id='completeBtn') Completed 
+      br
+      input(id='addTaskInput' required) 
+      button(id='addTaskBtn') Add Task 
+
+      div(id='taskDisplay')
+        //- input(type='checkbox' name='task' checked) 
+
+
+
+      br
     div(id='listSummaryPage')
+      textarea(id='currListName' placeholder= 'listCategory')
+
