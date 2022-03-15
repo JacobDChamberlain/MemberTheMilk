@@ -32,10 +32,10 @@ const userValidators = [
       return db.User.findOne({ where: { email: value } })
         .then((user) => {
           if (user) {
-              return Promise.reject("The Email Address is already in use by another account.");
+            return Promise.reject("The Email Address is already in use by another account.");
           }
         });
-      }),
+    }),
   check("password")
     .exists({ checkFalsy: true })
     .withMessage("Please provide a value for password.")
@@ -45,10 +45,10 @@ const userValidators = [
     .exists({ checkFalsy: true })
     .withMessage("Please enter a value for Confirm Password.")
     .custom((value, { req }) => {
-        if (value !== req.body.password) {
-            throw new Error("Passwords do not match.");
-        }
-        return true;
+      if (value !== req.body.password) {
+        throw new Error("Passwords do not match.");
+      }
+      return true;
     })
 ];
 
@@ -66,12 +66,12 @@ router.post('/', csrfProtection, userValidators, asyncHandler(async (req, res) =
 
   const validatorErrors = validationResult(req);
 
-  if(validatorErrors.isEmpty()) {
+  if (validatorErrors.isEmpty()) {
     const hashedPassword = await bcrypt.hash(password, 12);
     user.hashedPassword = hashedPassword;
     await user.save();
     loginUser(req, res, user);
-    res.redirect('/');
+    res.redirect('/application');
   } else {
     const errors = validatorErrors.array().map((error) => error.msg);
     res.render('signUp', {
