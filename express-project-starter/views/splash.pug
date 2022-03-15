@@ -6,9 +6,16 @@ append head
   //- add page specific js
   script(src="/javascripts/splash.js" type="module" defer)
 
+include utils.pug
+
 block content
   h1= title
-  p Welcome to your Project Skeleton splash page
-
-  body 
-    img(src='')
+  div(id="splashImage")
+    img(src="/img/happy-milk.jpg")
+  div(id="welcomeBox")
+    label(for="splashText" id="welcomeText") Welcome to Member the Milk! You are currently logged out!
+  //script functionality has to be added with
+  // onclick to redirect for both bubttons
+  div(id="loginInfo")
+    button(id="loginBtn") Log In
+    button(id="signUpBtn") Sign Up

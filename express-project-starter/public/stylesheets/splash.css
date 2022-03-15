@@ -1,3 +1,62 @@
-body {
-  background-color: blueviolet;
+#loginBtn {
+  box-sizing: border-box;
+  font-size: 20px;
+  color: rgb(39, 151, 151);
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-color: aqua;
+  border-radius: 10%;
+  box-shadow: 2px 1px 1px gray;
+
+}
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px;
+}
+
+#welcomeText{
+  font-size: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+}
+
+#welcomeBox{
+  padding: 20px;
+  border: solid black;
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 2px 1px 1px gray;
+}
+
+#loginInfo{
+  display: flex;
+  flex-direction: center;
+  justify-content: space-evenly;
+}
+
+#signUpBtn{
+  color: rgb(39, 151, 151);
+  border-color: aqua;
+  box-sizing: border-box;
+  font-size: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 10%;
+  box-shadow: 2px 1px 1px gray;
+
+}
+
+#splashImage{
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
 }
