@@ -20,9 +20,10 @@ const loginValidators = [
   check('password')
     .exists({ checkFalsy: true })
     .withMessage('Please provide a value for Password'),
+
 ];
 
-router.post('/', csrfProtection, loginValidators, asyncHandler( async(req, res) => {
+router.post('/', csrfProtection, loginValidators, asyncHandler(async (req, res) => {
   const {
     email,
     password,
@@ -39,11 +40,12 @@ router.post('/', csrfProtection, loginValidators, asyncHandler( async(req, res) 
       const match = await bcrypt.compare(password, user.hashedPassword.toString());
       if (match) {
         loginUser(req, res, user);
-        res.redirect('/');
+        res.redirect('/application');
       }
     }
+    errors.push("Login failed for the provided email address and password.");
   } else {
-    errors = validatorErrors.array().map((error) => error.msg); 
+    errors = validatorErrors.array().map((error) => error.msg);
   }
 
   res.render('login', {
