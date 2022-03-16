@@ -37,13 +37,13 @@ block content
       button(id='incompleteBtn') Incomplete 
       button(id='completeBtn') Completed 
       br
-      form(action="/application" method="post")
+      form(action="/addTask" method="post")
         input(type='hidden' name='_csrf' value=csrfToken)
         input(type='hidden' name='userId' value=locals.user.id)
-        input(id='addTaskInput' required) 
-        select(for='listOptionsForm' required)
+        input(type='text' name='name' id='addTaskInput' required) 
+        select(name="listId" required)
           each list in Lists
-            option(name="listName" id='optionListName' value=list.id)= list.name
+            option(name="listId" id='optionListName' value=list.id)= list.name
         button(id='addTaskBttn' type="submit") Add Task 
 
       div(id='taskDisplay')
