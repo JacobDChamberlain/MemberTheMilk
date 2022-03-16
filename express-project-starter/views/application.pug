@@ -42,9 +42,11 @@ block content
 
       div(id='taskDisplay')
         //- input(type='checkbox' name='task' checked) 
-      div(type= 'hidden' id='editTaskForm')
-        input(type= 'hidden' id='taskRenameInputField' placeholder= 'Rename Lists')
-
+      div(id='editTaskForm')
+        input(type= 'text' id='taskRenameInputField' placeholder= 'Rename Tasks' required)
+        div(id='cancelSubmit')
+        button(id='cancelButton' type="button") Cancel
+        button(id='submitButton' type="button") Submit
 
       br
     div(id='listSummaryPage')
