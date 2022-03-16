@@ -1,14 +1,20 @@
 window.addEventListener("load", (event) => {
   console.log("hello from application ===> javascript")
 
+
   //* Add Task Functionality
+  //Loggingout User
+  // ! -------------------------------------------------------
   const logoutUser = document.getElementById("logoutBtn")
 
   logoutUser.addEventListener("click", e => {
     window.location.href = "/application/logout";
   });
 
+  // !111111111!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  // Task Button CREATE AND ADD
   const addTaskButton = document.getElementById('addTaskBtn');
+  //addTask Submit Button Event Listener
   addTaskButton.addEventListener('click', e => {
     //start with the div
     e.preventDefault();
@@ -17,6 +23,7 @@ window.addEventListener("load", (event) => {
     const task = document.getElementById('addTaskInput');
     const editTaskForm = document.getElementById('editTaskForm');
 
+    //If 
     if (task.value) {
       const currTaskRow = document.createElement('li');
       const taskDisplay = document.querySelector('#taskDisplay');
@@ -46,7 +53,7 @@ window.addEventListener("load", (event) => {
             currTaskRow.appendChild(editButton).innerHTML = "Edit";
             currTaskRow.appendChild(trashButton).innerText = "Trash";
           } else {
-            inputField.placeholder = 'New Name Required'
+            inputField.placeholder = 'Type an input to '
           }
 
         })
@@ -98,13 +105,7 @@ window.addEventListener("load", (event) => {
     inputField.type = "";
 
 
-    // addListButton
 
-
-
-
-    // const blah = document.createElement('option')
-    // listLists.appendChild(blah);
   })
 
 
