@@ -37,24 +37,22 @@ block content
       button(id='incompleteBtn') Incomplete 
       button(id='completeBtn') Completed 
       br
-      form(action="/application/tasks" method="POST")
+      form(action="/application" method="post")
         input(type='hidden' name='_csrf' value=csrfToken)
         input(type='hidden' name='userId' value=locals.user.id)
         input(id='addTaskInput' required) 
-        div(id='listOptionsForm')
-          select(for='listOptionsForm' required)
-            option(id='todayList') Today
-            option(id='tomorrowList') Tomorrow
-            option(id='weekList') This Week
-            option(id='trashList') Trash
-        button(id='addTaskBtn' type="submit") Add Task 
+        select(for='listOptionsForm' required)
+          each list in Lists
+            option(name="listName" id='optionListName' value=list.id)= list.name
+        button(id='addTaskBttn' type="submit") Add Task 
+
       div(id='taskDisplay')
         //- input(type='checkbox' name='task' checked) 
       div(id='editTaskForm')
         input(type= 'text' id='taskRenameInputField' placeholder= 'Rename Tasks' required)
         div(id='cancelSubmit')
-        button(id='cancelButton' type="button") Cancel
-        button(id='submitButton' type="button") Submit
+        //- button(id='cancelButton' type="button") Cancel
+        //- button(id='submitButton' type="button") Submit
 
       br
     div(id='listSummaryPage')

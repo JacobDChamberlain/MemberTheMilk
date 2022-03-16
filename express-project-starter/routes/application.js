@@ -7,20 +7,24 @@ const db = require('../db/models')
 /* GET application page. */
 //? /application by default because of file name
 
-router.get('/', csrfProtection, requireAuth, (req, res) => {
-  res.render('application', { title: 'application', csrfToken: req.csrfToken() });
-});
+router.get('/', csrfProtection, requireAuth, asyncHandler(async (req, res) => {
+  const Lists = await db.List.findAll()
+  res.render('application', { title: 'application', csrfToken: req.csrfToken(), Lists });
+}));
 
 router.get('/logout', (req, res) => {
   logoutUser(req, res);
   res.redirect('/splash');
 })
 
-router.post('/tasks', async (req, res) => {
-  const { name } = req.body;
-  const task = await db.Task.build({ name });
+router.post('/', asyncHandler(async (req, res) => {
 
-})
+  const { name } = req.body;
+  console.log(name, listName)
+  const task = await db.Task.build({ name });
+  await task.save();
+  res.redirect('/application')
+}));
 
 
 module.exports = router;

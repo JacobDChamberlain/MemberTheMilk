@@ -53,7 +53,7 @@ window.addEventListener("load", (event) => {
             currTaskRow.appendChild(editButton).innerHTML = "Edit";
             currTaskRow.appendChild(trashButton).innerText = "Trash";
           } else {
-            inputField.placeholder = 'Type an input to '
+            inputField.placeholder = 'Type an input to submit form'
           }
 
         })
