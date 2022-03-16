@@ -37,14 +37,22 @@ block content
       button(id='incompleteBtn') Incomplete 
       button(id='completeBtn') Completed 
       br
-      input(id='addTaskInput' required) 
-      button(id='addTaskBtn') Add Task 
+      form(action="/application" method="post")
+        input(type='hidden' name='_csrf' value=csrfToken)
+        input(type='hidden' name='userId' value=locals.user.id)
+        input(id='addTaskInput' required) 
+        select(for='listOptionsForm' required)
+          each list in Lists
+            option(name="listName" id='optionListName' value=list.id)= list.name
+        button(id='addTaskBttn' type="submit") Add Task 
 
       div(id='taskDisplay')
         //- input(type='checkbox' name='task' checked) 
-      div(type= 'hidden' id='editTaskForm')
-        input(type= 'hidden' id='taskRenameInputField' placeholder= 'Rename Lists')
-
+      div(id='editTaskForm')
+        input(type= 'text' id='taskRenameInputField' placeholder= 'Rename Tasks' required)
+        div(id='cancelSubmit')
+        //- button(id='cancelButton' type="button") Cancel
+        //- button(id='submitButton' type="button") Submit
 
       br
     div(id='listSummaryPage')

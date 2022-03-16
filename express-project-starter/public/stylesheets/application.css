@@ -22,3 +22,22 @@ body {
 #listSummaryPage {
   background-color: blanchedalmond;
 }
+
+#editTaskForm {
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* #cancelButton {
+  
+}
+
+#submitButton {
+  
+} */
+
+#cancelSubmit {
+  display: flex;
+  justify-content: space-evenly;
+}

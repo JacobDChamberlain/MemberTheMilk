@@ -64,12 +64,39 @@ router.post('/', csrfProtection, userValidators, asyncHandler(async (req, res) =
     email
   });
 
+
+
   const validatorErrors = validationResult(req);
 
   if (validatorErrors.isEmpty()) {
     const hashedPassword = await bcrypt.hash(password, 12);
     user.hashedPassword = hashedPassword;
     await user.save();
+    //Creates The Lists for every new User
+    const Today = await db.List.build({
+      name: 'Today',
+      userId: user.id
+    })
+    const Tomorrow = await db.List.build({
+      name: 'Tomorrow',
+      userId: user.id
+    })
+    const thisWeek = await db.List.build({
+      name: 'This Week',
+      userId: user.id
+    })
+    const Trash = await db.List.build({
+      name: 'Trash',
+      userId: user.id
+    })
+
+    /// Saves the newly created Lists for every User
+    await Today.save();
+    await Tomorrow.save();
+    await thisWeek.save();
+    await Trash.save();
+
+    // Logs in the user and redirects them to their application page
     loginUser(req, res, user);
     res.redirect('/application');
   } else {
