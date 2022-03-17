@@ -21,6 +21,8 @@ const addTaskRouter = require('./routes/addTaskRoute');
 const addListRouter = require('./routes/addListRoute');
 const editTaskRouter = require('./routes/editTaskRoute');
 const deleteTaskRouter = require('./routes/deleteTaskRoute');
+const editListRouter = require('./routes/editListRoute');
+const deleteListRouter = require('./routes/deleteListRoute');
 //* Require Routers End Here
 
 const app = express();
@@ -64,6 +66,8 @@ app.use('/addTask', addTaskRouter);
 app.use('/addList', addListRouter);
 app.use('/editTask', editTaskRouter);
 app.use('/deleteTask', deleteTaskRouter);
+app.use('/editList', editListRouter);
+app.use('/deleteList', deleteListRouter);
 //* Use Routers End Here
 
 // catch 404 and forward to error handler

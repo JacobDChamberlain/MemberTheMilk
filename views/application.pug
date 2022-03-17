@@ -19,9 +19,15 @@ block content
 
       label(for='inboxDropDown') Lists 📃
       div(id='sadfasd')
-        select(id='listLists' innerText='list')
+        ul(id='listLists' innerText='list')
           each list in lists
-            option(value=list.id)= list.name
+            li(value=list.id)= list.name
+              form(action="/editList" method="post" id="editListSubmitForm")
+                input(type='text' name= 'name' id='addListList' placeholder= 'Rename List' required)
+                button(id='editListBtn' type="submit") Edit List
+              form(action="/deleteList" method="post" id="deleteListForm")
+                input(type='hidden' name='listId' value=list.id)
+                button(id='deleteListBtn' type='submit') Delete List
         //- button(id='addListBtn' innerText='Add') Add
       input(type='hidden' id='addListInput' placeholder='Add List')
           //- This is for the user to add *Build in the End*
@@ -62,6 +68,7 @@ block content
                 select(name="listId" required)
                   each list in lists
                     option(name="listId" id='optionListName' value=list.id)= list.name
+                input(type='hidden' name='taskId' value=task.id)
                 button(id='editTaskBtn' type="submit") Edit Task
               form(action="/deleteTask" method="post" id="deleteTaskForm")
                 input(type='hidden' name='taskId' value=task.id)

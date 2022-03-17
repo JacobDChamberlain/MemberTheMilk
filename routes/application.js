@@ -9,17 +9,22 @@ const db = require('../db/models')
 //? /application by default because of file name
 
 //* Query sends the list on the select field.
-router.get('/',  requireAuth, asyncHandler(async (req, res) => {
+router.get('/', requireAuth, asyncHandler(async (req, res) => {
   const userId = req.session.auth.userId;
 
   const lists = await db.List.findAll({
-    where: { userId }
+    where: { userId },
+    order: [['createdAt', 'DESC']]
   })
 
   const tasks = await db.Task.findAll({
     where: { userId },
     order: [['createdAt', 'DESC']]
   })
+  console.log("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
+  tasks.forEach(task => {
+    console.log(task.name, task.createdAt)
+  });
   //! Comment me Out
   res.render('application', { title: 'application', lists, tasks }); //lists, tasks
 }));
