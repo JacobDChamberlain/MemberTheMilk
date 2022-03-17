@@ -48,9 +48,9 @@ block content
 
       div(id='taskDisplay')
         //- if tasks
-        //- ul 
-        //-   each list in lists
-        //-     li= list.Task.name 
+        ul 
+          each task in tasks
+            li= task.name 
         //- FIX CHECKBOX FOR CREATING A TASK
       div(id='editTaskForm')
         input(type= 'text' id='taskRenameInputField' placeholder= 'Rename Tasks' required)

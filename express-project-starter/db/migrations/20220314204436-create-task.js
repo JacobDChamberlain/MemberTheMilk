@@ -12,9 +12,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING(100)
       },
-      description: {
-        type: Sequelize.TEXT
-      },
+      // description: {
+      //   type: Sequelize.TEXT
+      // },
       isComplete: {
         type: Sequelize.BOOLEAN
       },
