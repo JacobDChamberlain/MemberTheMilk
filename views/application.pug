@@ -13,21 +13,25 @@ block content
     div(id='navbarLeft')
       label(for='inboxDropDown') Inbox 📮
       select(id='inboxDropDown')
-        option(id='allTaskList') All Tasks
-        option(id='todayList') Today
-        option(id='tomorrowList') Tomorrow
-        option(id='weekList') This Week
-        option(id='trashList') Trash
+        each list in lists
+          option(value=list.id)= list.name
       br
 
       label(for='inboxDropDown') Lists 📃
       div(id='sadfasd')
         select(id='listLists' innerText='list')
-          option() asdfasdfdsafsadsf
-        button(id='addListBtn' innerText='Add') Add
+          each list in lists
+            option(value=list.id)= list.name
+        //- button(id='addListBtn' innerText='Add') Add
       input(type='hidden' id='addListInput' placeholder='Add List')
           //- This is for the user to add *Build in the End*
       br
+      form(action="/addList" method="post")
+        //- input(type='hidden' name='_csrf' value=csrfToken)
+        input(type='hidden' name='userId' value=locals.user.id)
+        label(for='name') List Name:
+        input(type='text' name='name' id='addListInput' required)
+        button(id='addListBttn' type="submit") Add List
 
     div(id='tasksPage')
       //- img(src='./blahBlahBlah')
