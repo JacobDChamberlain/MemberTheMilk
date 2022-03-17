@@ -38,26 +38,38 @@ block content
       button(id='completeBtn') Completed 
       br
       form(action="/addTask" method="post")
-        input(type='hidden' name='_csrf' value=csrfToken)
+        //- input(type='hidden' name='_csrf' value=csrfToken)
         input(type='hidden' name='userId' value=locals.user.id)
         input(type='text' name='name' id='addTaskInput' required) 
         select(name="listId" required)
           each list in lists
             option(name="listId" id='optionListName' value=list.id)= list.name
-        button(id='addTaskBtn' type="submit") Add Task 
+        button(id='addTaskBttn' type="submit") Add Task 
 
       div(id='taskDisplay')
-        //- if tasks
-        ul 
+        ul(name= "listId" required)
           each task in tasks
-            li= task.name 
+            li(id= 'addLiTask')= task.name 
+              input(type='checkbox' name='task' id=`checkBox-${task.id}`) 
+              //- addTaskTask and editTaskSubmitForm is hidden in css (Our edit/rename)
+              //- csrfTokens are for form submissions. Don't dlt for bhavik :(
+              form(action="/editTask" method="post" id="editTaskSubmitForm")
+                //- input(type='hidden' name='_csrf' value=csrfToken)
+                input(type='hidden' name='userId' value=task.id)
+                input(type='text' name= 'name' id='addTaskTask' placeholder= 'Rename Task' required) 
+                select(name="listId" required)
+                  each list in lists
+                    option(name="listId" id='optionListName' value=list.id)= list.name
+                button(id='editTaskBtn' type="submit") Submit 
+                  
+
         //- FIX CHECKBOX FOR CREATING A TASK
       div(id='editTaskForm')
         input(type= 'text' id='taskRenameInputField' placeholder= 'Rename Tasks' required)
         input(id='checkbox' name='task' checked) 
         div(id='cancelSubmit')
-        //- button(id='cancelButton' type="button") Cancel
-        //- button(id='submitButton' type="button") Submit
+          button(id='cancelButton' type="button") Cancel
+          button(id='submitButton' type="button") Submit
 
       br
     div(id='listSummaryPage')

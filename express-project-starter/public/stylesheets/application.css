@@ -41,3 +41,20 @@ body {
   display: flex;
   justify-content: space-evenly;
 }
+
+#addTaskTask {
+  /* visibility: hidden; */
+  /* display: none; */
+}
+
+#editTaskBtn {
+  /* visibility: hidden; */
+}
+
+#editTaskSubmitForm {
+  /* visibility: hidden; */
+}
+
+/* 
+flex-column-reverse FOR CHECKBOX AND TASK
+*/

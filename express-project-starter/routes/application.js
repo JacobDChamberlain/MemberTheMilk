@@ -9,18 +9,31 @@ const db = require('../db/models')
 //? /application by default because of file name
 
 //* Query sends the list on the select field.
-router.get('/', csrfProtection, requireAuth, asyncHandler(async (req, res) => {
-  // console.log("🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎");
-  // console.log(req.sessionID); // Grabs the sid from Session in DB
+router.get('/',  requireAuth, asyncHandler(async (req, res) => {
   const userId = req.session.auth.userId;
-  // const listId = req.session.auth.listId; //Didn't work UNDEFINED
-  // const user = await db.User.findByPk(userId, {
-  //   include: [db.List]
-  // })
+
   const lists = await db.List.findAll({
     where: { userId }
   })
 
+  const tasks = await db.Task.findAll({
+    where: { userId }
+  })
+  //! Comment me Out
+  res.render('application', { title: 'application', lists, tasks }); //lists, tasks
+}));
+
+router.get('/logout', (req, res) => {
+  logoutUser(req, res);
+  res.redirect('/splash');
+})
+
+
+module.exports = router;
+
+
+
+  //! IGNORE BELOW THIS LINE
   //? Ignore Me
   // console.log("🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊")
   // const theThing = Object.keys(lists);
@@ -31,22 +44,15 @@ router.get('/', csrfProtection, requireAuth, asyncHandler(async (req, res) => {
   //   console.log("🍎🍎🍎🍎🍎")
   //   console.log(keys);
   // }
-// console.log(listId);
-//? Ignore Me End
+  // console.log(listId);
+  //? Ignore Me End
 
   // console.log(...lists);
-  //TODO Raymond look at this
-  const tasks = await db.Task.findAll({
-    where: { userId }
-  })
-  //! Comment me Out
-  res.render('application', { title: 'application', csrfToken: req.csrfToken(), lists, tasks }); //lists, tasks
-}));
 
-router.get('/logout', (req, res) => {
-  logoutUser(req, res);
-  res.redirect('/splash');
-})
-
-
-module.exports = router;
+    // console.log("🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎");
+  // console.log(req.sessionID); // Grabs the sid from Session in DB
+  // const userId = req.session.auth.userId;
+  // const listId = req.session.auth.listId; //Didn't work UNDEFINED
+  // const user = await db.User.findByPk(userId, {
+  //   include: [db.List]
+  // })
