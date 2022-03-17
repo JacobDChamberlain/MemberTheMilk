@@ -17,7 +17,8 @@ router.get('/',  requireAuth, asyncHandler(async (req, res) => {
   })
 
   const tasks = await db.Task.findAll({
-    where: { userId }
+    where: { userId },
+    order: [['createdAt', 'DESC']]
   })
   //! Comment me Out
   res.render('application', { title: 'application', lists, tasks }); //lists, tasks

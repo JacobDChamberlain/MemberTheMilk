@@ -13,60 +13,64 @@ block content
     div(id='navbarLeft')
       label(for='inboxDropDown') Inbox 📮
       select(id='inboxDropDown')
-        option(id='allTaskList') All Tasks
-        option(id='todayList') Today
-        option(id='tomorrowList') Tomorrow
-        option(id='weekList') This Week
-        option(id='trashList') Trash
+        each list in lists
+          option(value=list.id)= list.name
       br
 
       label(for='inboxDropDown') Lists 📃
       div(id='sadfasd')
         select(id='listLists' innerText='list')
-          option() asdfasdfdsafsadsf
-        button(id='addListBtn' innerText='Add') Add
+          each list in lists
+            option(value=list.id)= list.name
+        //- button(id='addListBtn' innerText='Add') Add
       input(type='hidden' id='addListInput' placeholder='Add List')
           //- This is for the user to add *Build in the End*
       br
+      form(action="/addList" method="post")
+        //- input(type='hidden' name='_csrf' value=csrfToken)
+        input(type='hidden' name='userId' value=locals.user.id)
+        label(for='name') List Name:
+        input(type='text' name='name' id='addListInput' required)
+        button(id='addListBttn' type="submit") Add List
 
     div(id='tasksPage')
       //- img(src='./blahBlahBlah')
       button(id='logoutBtn') Sign Out
       form(action='/application' method='post')
       //- search(id='searchTask')
-      button(id='incompleteBtn') Incomplete 
-      button(id='completeBtn') Completed 
+      button(id='incompleteBtn') Incomplete
+      button(id='completeBtn') Completed
       br
       form(action="/addTask" method="post")
         //- input(type='hidden' name='_csrf' value=csrfToken)
         input(type='hidden' name='userId' value=locals.user.id)
-        input(type='text' name='name' id='addTaskInput' required) 
+        input(type='text' name='name' id='addTaskInput' required)
         select(name="listId" required)
           each list in lists
             option(name="listId" id='optionListName' value=list.id)= list.name
-        button(id='addTaskBttn' type="submit") Add Task 
+        button(id='addTaskBttn' type="submit") Add Task
 
       div(id='taskDisplay')
         ul(name= "listId" required)
           each task in tasks
-            li(id= 'addLiTask')= task.name 
-              input(type='checkbox' name='task' id=`checkBox-${task.id}`) 
+            li(id= 'addLiTask')= task.name
+              input(type='checkbox' name='task' id=`checkBox-${task.id}`)
               //- addTaskTask and editTaskSubmitForm is hidden in css (Our edit/rename)
               //- csrfTokens are for form submissions. Don't dlt for bhavik :(
               form(action="/editTask" method="post" id="editTaskSubmitForm")
-                //- input(type='hidden' name='_csrf' value=csrfToken)
-                input(type='hidden' name='userId' value=task.id)
-                input(type='text' name= 'name' id='addTaskTask' placeholder= 'Rename Task' required) 
+                input(type='text' name= 'name' id='addTaskTask' placeholder= 'Rename Task' required)
                 select(name="listId" required)
                   each list in lists
                     option(name="listId" id='optionListName' value=list.id)= list.name
-                button(id='editTaskBtn' type="submit") Submit 
-                  
+                button(id='editTaskBtn' type="submit") Edit Task
+              form(action="/deleteTask" method="post" id="deleteTaskForm")
+                input(type='hidden' name='taskId' value=task.id)
+                button(id='deleteTaskBtn' type='submit') Delete Task
 
         //- FIX CHECKBOX FOR CREATING A TASK
       div(id='editTaskForm')
         input(type= 'text' id='taskRenameInputField' placeholder= 'Rename Tasks' required)
-        input(id='checkbox' name='task' checked) 
+        input(id='checkbox' name='task' checked)
         div(id='cancelSubmit')
           button(id='cancelButton' type="button") Cancel
           button(id='submitButton' type="button") Submit
@@ -74,4 +78,3 @@ block content
       br
     div(id='listSummaryPage')
       textarea(id='currListName' placeholder= 'listCategory')
-
