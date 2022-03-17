@@ -7,23 +7,42 @@ const db = require('../db/models')
 /* GET application page. */
 //? /application by default because of file name
 
+//* Query sends the list on the select field.
 router.get('/', csrfProtection, requireAuth, asyncHandler(async (req, res) => {
-  console.log("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
-  console.log(req.sessionID)
-  console.log("hhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
-  const userId = req.session.auth.userId
-  const Lists = await db.List.findAll({
+  // console.log("🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎");
+  // console.log(req.sessionID); // Grabs the sid from Session in DB
+  const userId = req.session.auth.userId;
+  //? const listId = req.session.auth.listId; //Didn't work UNDEFINED
+  // const user = await db.User.findByPk(userId, {
+  //   include: [db.List]
+  // })
+  const lists = await db.List.findAll({
     where: { userId }
   })
-  res.render('application', { title: 'application', csrfToken: req.csrfToken(), Lists });
+  console.log("🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊")
+  // const theThing = Object.keys(lists);
+  // console.log(theThing);
+  const listId = lists[0].id;
+
+  // for (keys in lists) {
+  //   console.log("🍎🍎🍎🍎🍎")
+  //   console.log(keys);
+  // }
+
+
+
+  // console.log(...lists);
+  const tasks = await db.Task.findAll({
+    where: { userId, listId }
+  })
+  //! Comment me Out
+  res.render('application', { title: 'application', csrfToken: req.csrfToken(), lists }); //lists, tasks
 }));
 
 router.get('/logout', (req, res) => {
   logoutUser(req, res);
   res.redirect('/splash');
 })
-
-
 
 
 module.exports = router;

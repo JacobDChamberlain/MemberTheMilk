@@ -4,6 +4,7 @@ const db = require('../db/models');
 
 const { csrfProtection, asyncHandler } = require('./utils');
 
+//* Where we build the list
 router.post('/', asyncHandler(async (req, res) => {
 
     const { name, listId, userId } = req.body;

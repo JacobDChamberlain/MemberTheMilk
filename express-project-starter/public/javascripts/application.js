@@ -12,7 +12,7 @@ window.addEventListener("load", (event) => {
   });
 
   // !111111111!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  // Task Button CREATE AND ADD
+  //* Task Button CREATE AND ADD
   const addTaskButton = document.getElementById('addTaskBtn');
   //addTask Submit Button Event Listener
   addTaskButton.addEventListener('click', e => {
@@ -28,7 +28,7 @@ window.addEventListener("load", (event) => {
       const currTaskRow = document.createElement('li');
       const taskDisplay = document.querySelector('#taskDisplay');
 
-      const checkbox = document.createElement('checkbox');
+      const checkbox = document.getElementById('checkbox');
       checkbox.style.border = '3px'; //TODO FIX ME
 
       const editButton = document.createElement('button')
