@@ -9,7 +9,7 @@ const db = require('../db/models')
 //? /application by default because of file name
 
 //* Query sends the list on the select field.
-router.get('/', csrfProtection, requireAuth, asyncHandler(async (req, res) => {
+router.get('/',  requireAuth, asyncHandler(async (req, res) => {
   const userId = req.session.auth.userId;
 
   const lists = await db.List.findAll({
@@ -20,7 +20,7 @@ router.get('/', csrfProtection, requireAuth, asyncHandler(async (req, res) => {
     where: { userId }
   })
   //! Comment me Out
-  res.render('application', { title: 'application', csrfToken: req.csrfToken(), lists, tasks }); //lists, tasks
+  res.render('application', { title: 'application', lists, tasks }); //lists, tasks
 }));
 
 router.get('/logout', (req, res) => {
