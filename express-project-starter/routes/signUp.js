@@ -64,8 +64,6 @@ router.post('/', csrfProtection, userValidators, asyncHandler(async (req, res) =
     email
   });
 
-
-
   const validatorErrors = validationResult(req);
 
   if (validatorErrors.isEmpty()) {
@@ -73,6 +71,7 @@ router.post('/', csrfProtection, userValidators, asyncHandler(async (req, res) =
     user.hashedPassword = hashedPassword;
     await user.save();
     //Creates The Lists for every new User
+    //TODO Demo Users
     const Today = await db.List.build({
       name: 'Today',
       userId: user.id

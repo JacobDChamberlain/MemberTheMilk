@@ -42,14 +42,19 @@ block content
         input(type='hidden' name='userId' value=locals.user.id)
         input(type='text' name='name' id='addTaskInput' required) 
         select(name="listId" required)
-          each list in Lists
+          each list in lists
             option(name="listId" id='optionListName' value=list.id)= list.name
-        button(id='addTaskBttn' type="submit") Add Task 
+        button(id='addTaskBtn' type="submit") Add Task 
 
       div(id='taskDisplay')
-        //- input(type='checkbox' name='task' checked) 
+        //- if tasks
+        //- ul 
+        //-   each list in lists
+        //-     li= list.Task.name 
+        //- FIX CHECKBOX FOR CREATING A TASK
       div(id='editTaskForm')
         input(type= 'text' id='taskRenameInputField' placeholder= 'Rename Tasks' required)
+        input(id='checkbox' name='task' checked) 
         div(id='cancelSubmit')
         //- button(id='cancelButton' type="button") Cancel
         //- button(id='submitButton' type="button") Submit
