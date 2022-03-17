@@ -19,7 +19,8 @@ const splashRouter = require('./routes/splash');
 const demoUserRouter = require('./routes/demoUser');
 const addTaskRouter = require('./routes/addTaskRoute');
 const addListRouter = require('./routes/addListRoute');
-const editTaskRouter = require('./routes/editTaskRoute')
+const editTaskRouter = require('./routes/editTaskRoute');
+const deleteTaskRouter = require('./routes/deleteTaskRoute');
 //* Require Routers End Here
 
 const app = express();
@@ -62,6 +63,7 @@ app.use('/demo', demoUserRouter);
 app.use('/addTask', addTaskRouter);
 app.use('/addList', addListRouter);
 app.use('/editTask', editTaskRouter);
+app.use('/deleteTask', deleteTaskRouter);
 //* Use Routers End Here
 
 // catch 404 and forward to error handler
