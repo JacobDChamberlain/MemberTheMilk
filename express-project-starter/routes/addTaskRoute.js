@@ -14,4 +14,8 @@ router.post('/', asyncHandler(async (req, res) => {
     res.redirect('/application')
 }));
 
+router.put('/editTask', asyncHandler(async(req, res) => {
+  //
+}))
+
 module.exports = router;
