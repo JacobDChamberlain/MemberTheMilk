@@ -17,7 +17,7 @@ router.get('/', csrfProtection, requireAuth, asyncHandler(async (req, res) => {
   // const user = await db.User.findByPk(userId, {
   //   include: [db.List]
   // })
-  const lists = await List.findAll({
+  const lists = await db.List.findAll({
     where: { userId }
   })
 
@@ -36,7 +36,9 @@ router.get('/', csrfProtection, requireAuth, asyncHandler(async (req, res) => {
 
   // console.log(...lists);
   //TODO Raymond look at this
-  const tasks = await Task.findAll()
+  const tasks = await db.Task.findAll({
+    where: { userId }
+  })
   //! Comment me Out
   res.render('application', { title: 'application', csrfToken: req.csrfToken(), lists, tasks }); //lists, tasks
 }));

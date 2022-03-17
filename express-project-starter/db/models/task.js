@@ -2,7 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   const Task = sequelize.define('Task', {
     name: DataTypes.STRING,
-    // description: DataTypes.TEXT,
+    description: DataTypes.TEXT,
     isComplete: DataTypes.BOOLEAN,
     listId: DataTypes.INTEGER,
     userId: DataTypes.INTEGER

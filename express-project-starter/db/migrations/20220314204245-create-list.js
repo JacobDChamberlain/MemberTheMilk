@@ -12,9 +12,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING(50)
       },
-      // description: {
-      //   type: Sequelize.TEXT
-      // },
+      description: {
+        type: Sequelize.TEXT
+      },
       userId: {
         allowNull: false,
         type: Sequelize.INTEGER,
