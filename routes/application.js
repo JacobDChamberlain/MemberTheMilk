@@ -33,7 +33,7 @@ router.get('/', requireAuth, asyncHandler(async (req, res) => {
   //! Comment me Out
 
 
-  res.render('application', { title: 'application', lists, tasks, listTasks }); //lists, tasks
+  res.render('application', { title: 'application', lists, tasks }); //lists, tasks
 }));
 
 router.get('/logout', (req, res) => {
