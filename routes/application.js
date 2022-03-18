@@ -16,17 +16,24 @@ router.get('/', requireAuth, asyncHandler(async (req, res) => {
     where: { userId },
     order: [['createdAt', 'DESC']]
   })
-
+  console.log("🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊")
+  lists.forEach(list => {
+    console.log(list.id, list.name, list.createdAt, list.userId)
+    //Query in here for Every Single List
+  });
+  
   const tasks = await db.Task.findAll({
     where: { userId },
     order: [['createdAt', 'DESC']]
   })
-  console.log("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
+  console.log("🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎")
   tasks.forEach(task => {
-    console.log(task.name, task.createdAt)
+    console.log(task.id, task.name, task.createdAt, task.listId, task.userId)
   });
   //! Comment me Out
-  res.render('application', { title: 'application', lists, tasks }); //lists, tasks
+
+
+  res.render('application', { title: 'application', lists, tasks, listTasks }); //lists, tasks
 }));
 
 router.get('/logout', (req, res) => {
