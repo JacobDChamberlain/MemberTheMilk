@@ -40,7 +40,8 @@ router.post('/', csrfProtection, loginValidators, asyncHandler(async (req, res) 
       const match = await bcrypt.compare(password, user.hashedPassword.toString());
       if (match) {
         loginUser(req, res, user);
-        res.redirect('/application');
+        return res.redirect('/application');
+        // return;
       }
     }
     errors.push("Login failed for the provided email address and password.");
