@@ -94,6 +94,11 @@ p {
 	z-index: 1;
 }
 
+#login:hover {
+  color: rgba(13, 94, 172);
+  border-color: blue;
+}
+
 #signUpBtn {
   /* float: left; */
 	/* min-width: 150px;
@@ -110,6 +115,11 @@ p {
 	z-index: 1;
 }
 
+#signUpBtn:hover {
+  color: rgba(13, 94, 172);
+  border-color: blue;
+}
+
 #demoBtn {
   	float: left;
 	/* min-width: 150px;
@@ -124,4 +134,10 @@ p {
 	/* vertical-align: middle; */
 	/* position: relative; */
 	z-index: 1;
+  margin-top: -0.1px;
+}
+
+#demoBtn:hover {
+  color: rgba(13, 94, 172);
+  border-color: blue;
 }

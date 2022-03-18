@@ -1,26 +1,33 @@
 body {
-  background-color: green;
+  background-color: rgba(13, 94, 172);
+}
+
+h1 {
+  color: white;
+  align-content: center;
+  text-align: center;
+  border: solid 10px white;
 }
 
 #applicationPageContainer {
   display: grid;
-  grid-template-columns: 1fr 2fr 2fr;
+  grid-template-columns: 1fr 2fr 1fr;
 }
 
 #navbarLeft {
   border-color: brown;
-  background-color: aqua;
+  background-color: rgba(215, 231, 245);
   display: flex;
   flex-direction: column;
 
 }
 
 #tasksPage {
-  background-color: aquamarine;
+  background-color: white;
 }
 
 #listSummaryPage {
-  background-color: blanchedalmond;
+  background-color: rgba(215, 231, 245);
 }
 
 
@@ -28,6 +35,10 @@ body {
   visibility: hidden;
   display: flex;
   align-items: center;
+}
+
+.checkBox {
+  padding: 100px;
 }
 
 /* #cancelButton {
@@ -59,3 +70,8 @@ body {
 /* 
 flex-column-reverse FOR CHECKBOX AND TASK
 */
+
+
+/* .grid {
+  display: grid
+} */
