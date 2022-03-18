@@ -18,7 +18,7 @@ block content
       br
 
       label(for='inboxDropDown') Lists 📃
-      div(id='sadfasd')
+      div(id='listsPage')
         ul(id='listLists' innerText='list')
           each list in lists
             li(value=list.id)= list.name
@@ -74,6 +74,9 @@ block content
               form(action="/deleteTask" method="post" id="deleteTaskForm")
                 input(type='hidden' name='taskId' value=task.id)
                 button(id='deleteTaskBtn' type='submit') Delete Task
+              form(action="/viewTask" method="post" id="viewTaskForm")
+                button(id='viewTaskBtn' type='submit') View Tasks 
+                
 
         //- FIX CHECKBOX FOR CREATING A TASK
       div(id='editTaskForm')
@@ -87,3 +90,9 @@ block content
     div(id='listSummaryPage')
       textarea(id='currListName' placeholder= 'listCategory')
       
+    div(id='listTaskDisplay')
+      ul(name= "linkTwoUl" required)
+          each listTask in listTasks
+            li(id= 'addListTask')= listTask.name
+              //- addTaskTask and editTaskSubmitForm is hidden in css (Our edit/rename)
+              //- csrfTokens are for form submissions. Don't dlt for bhavik :(

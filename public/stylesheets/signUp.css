@@ -1,9 +1,11 @@
 body {
-  background-color: rgba(228, 238, 248);
+  background-color: rgba(13, 94, 172);
+  color: white;
   /* display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center; */
+  text-align: center;
   vertical-align: middle;
   border: 2px solid yellow;
 }
