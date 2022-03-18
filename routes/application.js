@@ -31,7 +31,7 @@ router.get('/', requireAuth, asyncHandler(async (req, res) => {
 
 router.get('/logout', (req, res) => {
   logoutUser(req, res);
-  res.redirect('/splash');
+  res.redirect('/');
 })
 
 
