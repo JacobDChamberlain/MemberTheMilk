@@ -10,7 +10,6 @@ const { sessionSecret } = require('./config/index');
 const { restoreUser } = require('./auth');
 
 //* Require Routers Start Here
-const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const applicationRouter = require('./routes/application');
 const loginRouter = require('./routes/login');
@@ -55,12 +54,11 @@ app.use(restoreUser);
 store.sync();
 
 //* User Routers Start Here
-app.use('/', indexRouter);
+app.use('/', splashRouter);
 app.use('/users', usersRouter);
 app.use('/application', applicationRouter);
 app.use('/login', loginRouter);
 app.use('/signUp', signUpRouter);
-app.use('/splash', splashRouter);
 app.use('/demo', demoUserRouter);
 app.use('/addTask', addTaskRouter);
 app.use('/addList', addListRouter);

@@ -23,6 +23,7 @@ block content
           each list in lists
             li(value=list.id)= list.name
               form(action="/editList" method="post" id="editListSubmitForm")
+                input(type='hidden' name='listId' value=list.id)
                 input(type='text' name= 'name' id='addListList' placeholder= 'Rename List' required)
                 button(id='editListBtn' type="submit") Edit List
               form(action="/deleteList" method="post" id="deleteListForm")
@@ -85,3 +86,4 @@ block content
       br
     div(id='listSummaryPage')
       textarea(id='currListName' placeholder= 'listCategory')
+      
