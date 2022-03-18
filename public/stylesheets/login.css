@@ -25,15 +25,92 @@ body {
 }
 
 h1 {
+  color: white;
+  font-size: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   margin: auto;
   width: 50%;
-  border: 3px solid green;
+  /* border: 3px solid green; */
   padding: 10px;
 }
 
 p {
+  display: flex;
+  /* flex: center; */
+  flex-direction: center;
+  justify-content: center;
+  background-image: url(https://cdn.discordapp.com/attachments/953443914138935366/954421716728311889/lonSmolRanch200x200.png);
+  /* background-repeat: no-repeat; */
+
   margin: auto;
-  width: 50%;
-  border: 3px solid green;
+  max-width: 0%;
+  width: 61.8%;
+  /* border: 3px solid green; */
+  padding: 100px;
+}
+
+/* #loginCredentials {
+
+} */
+
+#email {
+  width: calc(100% - 20px);
   padding: 10px;
+  background: white;
+  box-shadow: 0 1px 1px #ccc;
+}
+
+#password {
+  width: calc(100% - 20px);
+  padding: 10px;
+  background: white;
+  box-shadow: 0 1px 1px #ccc;
+}
+
+#login {
+  /* float: left; */
+	/* min-width: 150px;
+	max-width: 250px; */
+	/* display: block; */
+	margin: 1em;
+	padding: 1em 2em;
+	border: white;
+	background: white;
+	color: black;
+	/* vertical-align: middle; */
+	/* position: relative; */
+	z-index: 1;
+}
+
+#signUpBtn {
+  float: left;
+	/* min-width: 150px;
+	max-width: 250px; */
+	/* display: block; */
+	margin: 1em;
+	padding: 1em 2em;
+	border: white;
+	background: white;
+	color: black;
+	/* vertical-align: middle; */
+	/* position: relative; */
+	z-index: 1;
+}
+
+#demoBtn {
+  	float: left;
+	/* min-width: 150px;
+	max-width: 250px; */
+	/* display: block; */
+	margin: 1em;
+	padding: 1em 2em;
+	border: white;
+	background: white;
+	color: black;
+	/* vertical-align: middle; */
+	/* position: relative; */
+	z-index: 1;
 }

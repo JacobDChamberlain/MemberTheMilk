@@ -29,11 +29,6 @@ h1 {
   color: pink; */
 }
 
-#loginBtn:hover{
-  color:blue;
-  border-color: blue;
-}
-
 body{
   display: flex;
   flex-direction: column;
@@ -66,6 +61,16 @@ body{
   height: 200px;
 }
 
+#loginBtn:hover {
+  color: rgba(13, 94, 172);
+  border-color: blue;
+}
+
+#signUpBtn:hover {
+  color: rgba(13, 94, 172);
+  border-color: blue;
+}
+
 #loginBtn {
 	float: left;
 	/* min-width: 150px;
@@ -82,13 +87,13 @@ body{
 }
 
 #signUpBtn {
-  float: left;
-	/* min-width: 150px; */
-	/* max-width: 250px; */
+	float: left;
+	/* min-width: 150px;
+	max-width: 250px; */
 	/* display: block; */
 	margin: 1em;
 	padding: 1em 2em;
-	border: none;
+	border: white;
 	background: white;
 	color: inherit;
 	/* vertical-align: middle; */
@@ -144,7 +149,6 @@ color: black;
   display: flex;
   flex-direction: center;
   justify-content: center;
- 
 }
 
 h1 {

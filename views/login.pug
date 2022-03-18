@@ -10,17 +10,17 @@ include utils.pug
 
 block content
   h1= title
-  p Welcome to your Project Skeleton signUp page
+  p 
   +validationErrorSummary(errors)
-  form(action='/login' method='post')
+  form(action='/login' method='post' id='loginCredentials')
     input(type='hidden' name='_csrf' value=csrfToken)
     //- input(type='text' name='username' value=user.username placeholder='username' required)
     br
-    input(type='email' name='email' value=email placeholder='email' required)
+    input(type='email' name='email' value=email placeholder='email' required id= 'email')
     br
-    input(type='password' name='password' placeholder='password' required)
+    input(type='password' name='password' placeholder='password' required id= 'password')
     br
-    button(type='submit' ) Login
+    button(type='submit' id='login') Login
   br
   button(id='signUpBtn') Don't have an account?
   br
