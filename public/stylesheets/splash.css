@@ -13,16 +13,33 @@
   transition: color .5s;
 }
 
+h1 {
+    color: white;
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#splashPageImage {
+  /* background-size: 150px;
+  width: 300px;
+  height: 300px;
+  border: 2px solid;
+  color: pink; */
+}
 
 #loginBtn:hover{
   color:blue;
   border-color: blue;
 }
+
 body{
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 100px;
+  background-color: rgba(13, 94, 172);
 
   background-image: url(./ghibli-wallhaven.png);
 	background-size: cover;
@@ -30,6 +47,7 @@ body{
 }
 
 #welcomeText{
+  color: white;
   font-size: 40px;
   padding: 20px;
   display: flex;
@@ -40,13 +58,54 @@ body{
 
 #welcomeBox{
   padding: 20px;
-  border: solid black;
+  border: solid white;
   margin: 20px;
   border-radius: 5px;
   box-shadow: 2px 1px 1px gray;
   width: 600px;
   height: 200px;
 }
+
+#loginBtn {
+	float: left;
+	/* min-width: 150px;
+	max-width: 250px; */
+	/* display: block; */
+	margin: 1em;
+	padding: 1em 2em;
+	border: white;
+	background: white;
+	color: inherit;
+	/* vertical-align: middle; */
+	/* position: relative; */
+	z-index: 1;
+}
+
+#signUpBtn {
+  float: left;
+	/* min-width: 150px; */
+	/* max-width: 250px; */
+	/* display: block; */
+	margin: 1em;
+	padding: 1em 2em;
+	border: none;
+	background: white;
+	color: inherit;
+	/* vertical-align: middle; */
+	/* position: relative; */
+	z-index: 1;
+}
+
+#loginBtn:focus {
+	outline: none;
+}
+
+#loginBtn > span {
+	vertical-align: middle;
+}
+
+
+
 
 #theBox{
   display: flex;

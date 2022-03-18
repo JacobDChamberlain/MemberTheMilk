@@ -43,16 +43,16 @@ body {
 }
 
 #addTaskTask {
-  /* visibility: hidden; */
+  visibility: hidden;
   /* display: none; */
 }
 
 #editTaskBtn {
-  /* visibility: hidden; */
+  visibility: hidden;
 }
 
 #editTaskSubmitForm {
-  /* visibility: hidden; */
+  visibility: hidden;
 }
 
 /* 

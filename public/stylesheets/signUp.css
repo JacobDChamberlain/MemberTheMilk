@@ -1,3 +1,9 @@
 body {
-  background-color: darkred;
+  background-color: rgba(228, 238, 248);
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  vertical-align: middle;
+  border: 2px solid yellow;
 }
