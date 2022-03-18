@@ -1,11 +1,145 @@
 body {
   background-color: rgba(13, 94, 172);
   color: white;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
+  /* display: block; */
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* margin: auto; */
+  /* width: 50%; */
+  /* border: 3px solid green; */
+  /* padding: 10px; */
+  /* align-items: center;  */
+  /* vertical-align: middle; */
+  /* border: 2px solid yellow; */
   text-align: center;
-  vertical-align: middle;
-  border: 2px solid yellow;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - var(--ntp-one-google-bar-height));
+  min-width: fit-content;
+  padding-top: var(--ntp-one-google-bar-height);
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  color: white;
+  font: bold 1.2em "Fira Sans", serif;
+  font-size: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* margin: auto; */
+  width: 50%;
+  /* border: 3px solid green; */
+  padding: 10px;
+}
+
+p {
+  display: flex;
+  /* flex: center; */
+  flex-direction: center;
+  justify-content: center;
+  background-image: url(https://cdn.discordapp.com/attachments/953443914138935366/954421716728311889/lonSmolRanch200x200.png);
+  /* background-repeat: no-repeat; */
+
+  margin: auto;
+  max-width: 0%;
+  width: 61.8%;
+  /* border: 3px solid green; */
+  padding: 100px;
+}
+
+#username {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px;
+  margin-bottom: -0.1px;
+  background: white;
+  box-shadow: 0 1px 1px #ccc;
+  border: white;
+  border-radius: 50px;
+}
+
+
+#email {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px;
+  background: white;
+  box-shadow: 0 1px 1px #ccc;
+  border: white;
+  border-radius: 50px;
+}
+
+#password {
+  width: calc(100% - 20px);
+  padding: 10px;
+  background: white;
+  box-shadow: 0 1px 1px #ccc;
+  border: white;
+  border-radius: 50px;
+  margin-bottom: 10px;
+}
+
+#confirm-password {
+  width: calc(100% - 20px);
+  padding: 10px;
+  background: white;
+  box-shadow: 0 1px 1px #ccc;
+  border: white;
+  border-radius: 50px;
+}
+
+#signUpBtn {
+  /* float: left; */
+	/* min-width: 150px;
+	max-width: 250px; */
+	/* display: block; */
+	margin: 1em;
+	padding: 1em 2em;
+	border: white;
+  border-radius: 5px;
+	background: white;
+	color: black;
+	/* vertical-align: middle; */
+	/* position: relative; */
+	z-index: 1;
+}
+
+#loginBtn {
+  /* float: left; */
+	/* min-width: 150px;
+	max-width: 250px; */
+	/* display: block; */
+	margin: 1em;
+	padding: 1em 2em;
+	border: white;
+  border-radius: 5px;
+	background: white;
+	color: black;
+	/* vertical-align: middle; */
+	/* position: relative; */
+	z-index: 1;
+}
+
+#demoBtn {
+  /* float: left; */
+/* min-width: 150px;
+max-width: 250px; */
+/* display: block; */
+margin: 1em;
+padding: 1em 2em;
+border: white;
+border-radius: 5px;
+background: white;
+color: black;
+/* vertical-align: middle; */
+/* position: relative; */
+z-index: 1;
 }

@@ -19,6 +19,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    font: bold 4rem "Fira Sans", serif;
 }
 
 #splashPageImage {
@@ -49,6 +50,7 @@ body{
   flex-direction: column;
   justify-content: center;
   padding: 15px;
+  font: bold 40px "Fira Sans", serif;
 }
 
 #welcomeBox{
@@ -139,10 +141,6 @@ color: black;
   transition: border-color 1s;
   transition: color .5s;
 
-}
-#signUpBtn:hover {
-  color:blue;
-  border-color: blue;
 }
 
 #splashImage{
