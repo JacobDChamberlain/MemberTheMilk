@@ -22,13 +22,13 @@ h1 {
     font: bold 4rem "Fira Sans", serif;
 }
 
-#splashPageImage {
+/* #splashPageImage { */
   /* background-size: 150px;
   width: 300px;
   height: 300px;
   border: 2px solid;
   color: pink; */
-}
+/* } */
 
 body{
   display: flex;
@@ -37,7 +37,7 @@ body{
   padding: 100px;
   background-color: rgba(13, 94, 172);
 
-  background-image: url(./ghibli-wallhaven.png);
+  /* background-image: url(./ghibli-wallhaven.png); */
 	background-size: cover;
 	background-repeat: no-repeat;
 }
