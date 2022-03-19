@@ -18,7 +18,7 @@ block content
       br
 
       label(for='inboxDropDown') Lists 📃
-      div(id='sadfasd')
+      div(id='listsPage')
         ul(id='listLists' innerText='list')
           each list in lists
             li(value=list.id)= list.name
@@ -74,6 +74,8 @@ block content
               form(action="/deleteTask" method="post" id="deleteTaskForm")
                 input(type='hidden' name='taskId' value=task.id)
                 button(id='deleteTaskBtn' type='submit') Delete Task
+              
+                
 
         //- FIX CHECKBOX FOR CREATING A TASK
       div(id='editTaskForm')
@@ -85,4 +87,39 @@ block content
 
       br
     div(id='listSummaryPage')
-      textarea(id='currListName' placeholder= 'listCategory')
+      textarea(id='currListName' placeholder= 'listCategory') 
+      form(action='/application' method='post' id="viewTaskForm")
+        select(name="listId" required)
+          each list in lists
+            option(name="listId" id='optionListName' value=list.id)= list.name
+        button(id='viewTaskBtn' type='submit') View Tasks 
+      div(id= 'listCategoryDisplay')
+        form(action='/application' method='post' id="viewTaskDisplay")
+          select(name='taskId')
+            if (listTasks)
+              each task in tasks
+                option(name='taskId' id='taskDisplayName' value=task.id)= task.name 
+        
+          
+    
+    //- div(id='listTaskDisplay')
+    //-   ul(name= "listId")
+    //-     if(listTasks)
+    //-       each listTask in listTasks
+    //-         li(id= 'addListTask')= task.name
+    //-           input(type='checkbox' name='task' id=`checkBox-${task.id}`)
+    //-           //- addTaskTask and editTaskSubmitForm is hidden in css (Our edit/rename)
+    //-           //- csrfTokens are for form submissions. Don't dlt for bhavik :(
+    //-           form(action="/editTask" method="post" id="editTaskSubmitForm")
+    //-             input(type='text' name= 'name' id='addTaskTask' placeholder= 'Rename Task' required)
+    //-             select(name="listId" required)
+    //-               each list in lists
+    //-                 option(name="listId" id='optionListName' value=list.id)= list.name
+    //-             input(type='hidden' name='taskId' value=task.id)
+    //-             button(id='editTaskBtn' type="submit") Edit Task
+    //-           form(action="/deleteTask" method="post" id="deleteTaskForm")
+    //-             input(type='hidden' name='taskId' value=task.id)
+    //-             button(id='deleteTaskBtn' type='submit') Delete Task
+
+              //- addTaskTask and editTaskSubmitForm is hidden in css (Our edit/rename)
+              //- csrfTokens are for form submissions. Don't dlt for bhavik :(

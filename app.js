@@ -67,7 +67,6 @@ app.use('/editTask', editTaskRouter);
 app.use('/deleteTask', deleteTaskRouter);
 app.use('/editList', editListRouter);
 app.use('/deleteList', deleteListRouter);
-app.use('/viewTask', viewTaskRouter);
 //* Use Routers End Here
 
 // catch 404 and forward to error handler

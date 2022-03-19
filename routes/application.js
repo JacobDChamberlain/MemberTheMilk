@@ -11,31 +11,28 @@ const db = require('../db/models')
 //* Query sends the list on the select field.
 router.get('/', requireAuth, asyncHandler(async (req, res) => {
   const userId = req.session.auth.userId;
-
+  const listObject = {};
   //Querries for lists
   const lists = await db.List.findAll({
     where: { userId },
     order: [['createdAt', 'DESC']]
   })
-  const newArr = []
-  console.log("🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊")
-  lists.forEach(list => {
-    console.log(list.id, list.name, list.createdAt, list.userId)
-    let newArr = [];
-    newArr.push(list.id);
-    newArr.push(list.name);
-    console.log(newArr)
-    //Query in here for Every Single List
-  });
 
-  const currId = lists.map(list => {
-    console.log(list.id, list.name, list.createdAt, list.userId)
+  // console.log("🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊")
+  // lists.forEach(list => {
+  //   // console.log(list.id, list.name, list.createdAt, list.userId)
+  //   let newArr = [];
+  //   newArr.push(list.id);
+  //   newArr.push(list.name);
+  //   console.log(newArr)
+  //   //Query in here for Every Single List
+  // });
+
+  lists.map(list => {
+    // console.log(list.id, list.name, list.createdAt, list.userId)
     //Query in here for Every Single List
-    let newArr = [];
-    newArr.push(list.id);
-    newArr.push(list.name);
-    console.log(newArr)
-    return newArr;
+    listObject[list.id] = list.name;
+    return listObject;
   });
 
 
@@ -50,20 +47,52 @@ router.get('/', requireAuth, asyncHandler(async (req, res) => {
     where: { userId },
     order: [['createdAt', 'DESC']]
   })
-  console.log("🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎")
-  tasks.forEach(task => {
-    console.log(task.id, task.name, task.createdAt, task.listId, task.userId)
-  });
+  // console.log("🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎")
+  // tasks.forEach(task => {
+  //   console.log(task.id, task.name, task.createdAt, task.listId, task.userId)
+  // });
 
 
-  const listCategorys = await db.Task.findAll({
-    where: { userId, },
+  res.render('application', { title: 'application', lists, tasks, listObject }); //lists, tasks
+}));
+
+
+router.post('/', requireAuth, asyncHandler(async (req, res) => {
+
+  const listId = req.body.listId
+  const userId = req.session.auth.userId;
+  console.log('NNNNNNNNNNNNNNNNNNNNNNNNNNNN')
+  console.log(listId)
+
+
+
+
+  //Querries for lists
+  const lists = await db.List.findAll({
+    where: { userId },
     order: [['createdAt', 'DESC']]
   })
 
 
-  res.render('application', { title: 'application', lists, tasks, listCategorys }); //lists, tasks
+  const listTasks = await db.Task.findAll({
+    where: { userId, listId },
+    order: [['createdAt', 'DESC']]
+  })
+
+  console.log("/WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW")
+  console.log(listTasks)
+  console.log(userId, listId)
+
+  //Queurries for tasks
+  const tasks = await db.Task.findAll({
+    where: { userId, listId },
+    order: [['createdAt', 'DESC']]
+  })
+
+  res.render('application', { title: 'application', lists, tasks, listTasks }); //lists, tasks
+
 }));
+
 
 router.get('/logout', (req, res) => {
   logoutUser(req, res);

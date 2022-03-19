@@ -56,6 +56,10 @@ body {
   /* visibility: hidden; */
 }
 
+#listCategoryDisplay{
+  border: solid 10px;
+}
+
 /* 
 flex-column-reverse FOR CHECKBOX AND TASK
 */
