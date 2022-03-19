@@ -1,8 +1,8 @@
 //- extends layout
 
 append head
-  //- add bootstrap
-  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' integrity='sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh' crossorigin='anonymous')
+  //- add bootstrap (Edit, not allowed for project)
+  //- link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' integrity='sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh' crossorigin='anonymous')
   //- add page specific styles by appending to the head
   link(rel="stylesheet" href="/stylesheets/application.css")
   //- add page specific js
@@ -13,20 +13,22 @@ block content
   //- p Welcome to your Project Skeleton application page
   div(id='applicationPageContainer')
     div(id='navbarLeft' class="grid")
-      label(for='inboxDropDown') Inbox 📮
+      label(for='inboxDropDown' id='move5px' class='inboxToMoveAround') Inbox 📮
       select(id='inboxDropDown')
         each list in lists
           option(value=list.id)= list.name
       br
 
-      label(for='inboxDropDown') Lists 📃
+      label(for='inboxDropDown' id='move5px') Lists 📃
       div(id='sadfasd')
         ul(id='listLists' innerText='list')
           each list in lists
-            li(value=list.id)= list.name
+            div(class='listContainer')
+            li(value=list.id class='listNameName')= list.name
+            div(class='editDeleteBtnContainer')
               form(action="/editList" method="post" id="editListSubmitForm")
                 input(type='hidden' name='listId' value=list.id)
-                input(type='text' name= 'name' id='addListList' placeholder= 'Rename List' required)
+                input(type='text' name= 'name' id='addListList' class='editTheInput' placeholder= 'Rename List' required)
                 button(id='editListBtn' type="submit") Edit List
               form(action="/deleteList" method="post" id="deleteListForm")
                 input(type='hidden' name='listId' value=list.id)
@@ -35,7 +37,7 @@ block content
       input(type='hidden' id='addListInput' placeholder='Add List')
           //- This is for the user to add *Build in the End*
       br
-      form(action="/addList" method="post")
+      form(action="/addList" method="post" id='addTaskRow')
         //- input(type='hidden' name='_csrf' value=csrfToken)
         input(type='hidden' name='userId' value=locals.user.id)
         label(for='name') List Name:
@@ -58,12 +60,12 @@ block content
           each list in lists
             option(name="listId" id='optionListName' value=list.id)= list.name
         button(id='addTaskBttn' type="submit") Add Task
-
+      //-  class='btn btn-primary' is a bootstrap, lets take it out!!!
       div(id='taskDisplay')
-        ul(name= "listId" class= "list-group" required)
+        ul(name= "listId" required)
           each task in tasks
-            li(id= 'addLiTask' class= "list-group-item")= task.name
-              input(type='checkbox' name='task' id=`checkBox-${task.id}` class= '.checkBox')
+            li(id= 'addLiTask')= task.name
+              input(type='checkbox' name='task' id=`checkBox-${task.id}` class= 'checkBox')
               //- addTaskTask and editTaskSubmitForm is hidden in css (Our edit/rename)
               //- csrfTokens are for form submissions. Don't dlt for bhavik :(
               form(action="/editTask" method="post" id="editTaskSubmitForm")
