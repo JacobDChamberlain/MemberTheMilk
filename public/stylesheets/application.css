@@ -24,7 +24,7 @@ h1 {
 }
 
 #tasksPage {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   /* border: 1rem solid; */
 }
 
@@ -128,21 +128,6 @@ flex-column-reverse FOR CHECKBOX AND TASK
 /*  */
 /*  */
 
-#logoutBtn {
-	/* float: left; */
-	/* min-width: 150px;
-	max-width: 250px; */
-	/* display: block; */
-	/* margin: 1em; */
-	/* padding: 1em 2em; */
-	/* border: white;
-	background: white;
-	color: inherit; */
-	/* vertical-align: middle; */
-	/* position: relative; */
-	/* z-index: 1; */
-}
-
 #sadfasd {
   margin-top: -100px;
 }
@@ -156,10 +141,96 @@ flex-column-reverse FOR CHECKBOX AND TASK
   margin-left: 5px;
 }
 
+#logoutBtn {
+  margin-top: 2px;
+  margin-left: 4px;
+  border: solid rgba(13, 94, 172) 1px;
+  background: rgb(205, 231, 255);;
+  color: inherit;
+}
+
 #logoutBtn:hover {
   color: rgba(13, 94, 172);
   border-color: blue;
 }
+
+#completeBtn {
+  margin-top: 2px;
+  margin-left: 4px;
+  border: solid rgba(13, 94, 172) 1px;
+  background: rgb(205, 231, 255);;
+  color: inherit;
+}
+
+#completeBtn:hover {
+  color: rgba(13, 94, 172);
+  border-color: blue;
+}
+
+#incompleteBtn {
+  margin-top: 2px;
+  margin-left: 4px;
+  border: solid rgba(13, 94, 172) 1px;
+  background: rgb(205, 231, 255);;
+  color: inherit;
+}
+
+#incompleteBtn:hover {
+  color: rgba(13, 94, 172);
+  border-color: blue;
+}
+
+#addTaskInput {
+  margin-left: 4px;
+  margin-top: 2px;
+  margin-right: 2px;
+}
+
+#addTaskBttn {
+  margin-top: 2px;
+  margin-left: 2px;
+  border: solid rgba(13, 94, 172) 1px;
+  background: rgb(205, 231, 255);;
+  color: inherit;
+}
+
+#addTaskBttn:hover {
+  color: rgba(13, 94, 172);
+  border-color: blue;
+}
+
+
+#addTaskTask {
+  margin-right: 2px;
+}
+
+#editTaskBtn {
+  margin-top: 2px;
+  margin-left: 2px;
+  border: solid rgba(13, 94, 172) 1px;
+  background: rgb(205, 231, 255);;
+  color: inherit;
+}
+
+#editTaskBtn:hover {
+  color: rgba(13, 94, 172);
+  border-color: blue;
+}
+
+#deleteTaskBtn {
+  margin-top: 2px;
+  margin-left: 2px;
+  border: solid rgba(13, 94, 172) 1px;
+  background: rgb(205, 231, 255);;
+  color: inherit;
+}
+
+#deleteTaskBtn:hover {
+  color: rgba(13, 94, 172);
+  border-color: blue;
+}
+
+
 
 .listNameName {
   margin-bottom: -10px;
@@ -176,9 +247,9 @@ flex-column-reverse FOR CHECKBOX AND TASK
 #addListBttn {
   margin-top: 2px;
   margin-left: 4px;
-	border: white;
-	background: white;
-	color: inherit;
+  border: solid rgba(13, 94, 172) 1px;
+  background: rgb(205, 231, 255);;
+  color: inherit;
 }
 
 .inboxToMoveAround {
@@ -191,20 +262,11 @@ flex-column-reverse FOR CHECKBOX AND TASK
 }
 
 #editListBtn {
-  	/* float: left; */
-	/* min-width: 150px;
-	max-width: 250px; */
-	/* display: block; */
-	margin-top: 3px;
-	/* padding: 1em 2em; */
-	border: white;
-	background: white;
-	color: inherit;
-	/* vertical-align: middle; */
-	/* position: relative; */
-	z-index: 1;
-  position: absolute;
-  top: 21px;
+  margin-top: 2px;
+  margin-left: 4px;
+  border: solid rgba(13, 94, 172) 1px;
+  background: rgb(205, 231, 255);;
+  color: inherit;
 }
 
 #editListBtn:hover {
@@ -213,15 +275,11 @@ flex-column-reverse FOR CHECKBOX AND TASK
 }
 
 #deleteListBtn {
-	margin-top: 3px;
-  border: white;
-	background: white;
-	color: inherit;
-	z-index: 1;
-  /* padding-bottom: 100px; */
-  position: absolute;
-  top: 21px;
-  left: 70px;
+  margin-top: 2px;
+  margin-left: 4px;
+  border: solid rgba(13, 94, 172) 1px;
+  background: rgb(205, 231, 255);;
+  color: inherit;
 }
 
 #deleteListBtn:hover {
@@ -278,36 +336,16 @@ flex-column-reverse FOR CHECKBOX AND TASK
   
 }
 
-#listSummaryTitle{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 30px;
-  display: flex;
 
-  flex-direction: center;
-  justify-content: center;
-  
+#viewTaskBtn {
+  margin-top: 2px;
+  margin-left: 4px;
+  border: solid rgba(13, 94, 172) 1px;
+  background: rgb(205, 231, 255);;
+  color: inherit;
 }
 
-#listCategoryNameLabel{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 15px;
-  display: flex;
-
-  flex-direction: center;
-  justify-content: center;
-}
-
-#currTextCount {
-  margin: 10px;
-  border: 2px solid;
-}
-
-#listSummaryPage {
-  display: flex;
-  flex-direction: column;
-}
-
-#currListName {
-  margin: 10px;
-  border: 2px solid;
+#viewTaskBtn:hover{
+  color: rgba(13, 94, 172);
+  border-color: blue;
 }

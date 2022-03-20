@@ -1,4 +1,4 @@
-
+//- xtends layout
 
 append head
   //- add page specific styles by appending to the head
@@ -6,8 +6,9 @@ append head
   //- add page specific js
   script(src="/javascripts/application.js" type="module" defer)
 
-
-  h1= title
+block content
+  h1= "To-do's"
+  //- p Welcome to your Project Skeleton application page
   div(id='applicationPageContainer')
     div(id='navbarLeft')
       br
