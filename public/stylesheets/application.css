@@ -60,6 +60,10 @@ body {
   border: solid 10px;
 }
 
+#editOptionMenu{
+  /* display: none; */
+}
+
 /* 
 flex-column-reverse FOR CHECKBOX AND TASK
 */

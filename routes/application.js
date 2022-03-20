@@ -61,8 +61,8 @@ router.post('/', requireAuth, asyncHandler(async (req, res) => {
 
   const listId = req.body.listId
   const userId = req.session.auth.userId;
-  console.log('NNNNNNNNNNNNNNNNNNNNNNNNNNNN')
-  console.log(listId)
+  const listCategoryName = await db.List.findByPk(listId)
+
 
 
 
@@ -80,16 +80,17 @@ router.post('/', requireAuth, asyncHandler(async (req, res) => {
   })
 
   console.log("/WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW")
-  console.log(listTasks)
-  console.log(userId, listId)
+  console.log(userId, listId, listCategoryName.name)
 
   //Queurries for tasks
   const tasks = await db.Task.findAll({
-    where: { userId, listId },
+    where: { userId },
     order: [['createdAt', 'DESC']]
   })
 
-  res.render('application', { title: 'application', lists, tasks, listTasks }); //lists, tasks
+
+
+  res.render('application', { title: 'application', lists, tasks, listTasks, listCategoryName }); //lists, tasks
 
 }));
 
