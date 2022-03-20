@@ -18,42 +18,14 @@ router.get('/', requireAuth, asyncHandler(async (req, res) => {
     order: [['createdAt', 'DESC']]
   })
 
-  // console.log("🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊")
-  // lists.forEach(list => {
-  //   // console.log(list.id, list.name, list.createdAt, list.userId)
-  //   let newArr = [];
-  //   newArr.push(list.id);
-  //   newArr.push(list.name);
-  //   console.log(newArr)
-  //   //Query in here for Every Single List
-  // });
-
-  lists.map(list => {
-    // console.log(list.id, list.name, list.createdAt, list.userId)
-    //Query in here for Every Single List
-    listObject[list.id] = list.name;
-    return listObject;
-  });
-
-
-  // const listTasks = await db.List.findAll({
-  //   where: { userId, lists: },
-  // })
-
-  // const listId = lists
 
   //Queurries for tasks
   const tasks = await db.Task.findAll({
     where: { userId },
     order: [['createdAt', 'DESC']]
   })
-  // console.log("🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎")
-  // tasks.forEach(task => {
-  //   console.log(task.id, task.name, task.createdAt, task.listId, task.userId)
-  // });
 
-
-  res.render('application', { title: 'application', lists, tasks, listObject }); //lists, tasks
+  res.render('application', { title: 'application', lists, tasks }); //lists, tasks
 }));
 
 
@@ -63,19 +35,12 @@ router.post('/', requireAuth, asyncHandler(async (req, res) => {
   const userId = req.session.auth.userId;
   const listCategoryName = await db.List.findByPk(listId)
 
-
-
-
-
-  //Querries for lists
-  const lists = await db.List.findAll({
-    where: { userId },
-    order: [['createdAt', 'DESC']]
-  })
-
-
   const listTasks = await db.Task.findAll({
     where: { userId, listId },
+    order: [['createdAt', 'DESC']]
+  })
+  const lists = await db.List.findAll({
+    where: { userId },
     order: [['createdAt', 'DESC']]
   })
 
@@ -87,8 +52,6 @@ router.post('/', requireAuth, asyncHandler(async (req, res) => {
     where: { userId },
     order: [['createdAt', 'DESC']]
   })
-
-
 
   res.render('application', { title: 'application', lists, tasks, listTasks, listCategoryName }); //lists, tasks
 

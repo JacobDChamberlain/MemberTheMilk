@@ -243,3 +243,36 @@ flex-column-reverse FOR CHECKBOX AND TASK
   left: 0px;
   /* bottom: 40px; */
 }
+
+.renameTaskLabel {
+  font-weight: 100;
+  padding-top: 10px;
+  color:black;
+  font-size: small;
+  visibility: inherit;
+}
+
+#taskDisplayName {
+  margin: 5px;
+  
+  /* font-weight: bold; */
+  font: 14pt "Helvetica", serif;
+  font-weight: 550;
+  /* margin-bottom: 100px; */
+
+  /* margin-bottom: 1px; */
+
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* border: solid; */
+  /* box-shadow: 3px 1px 1px  rgba(13, 94, 172); */
+  border: 2px solid rgb(243, 245, 247);
+  padding-left: 5px;
+  margin-right: 10px;
+}
+
+#taskDisplayName:hover {
+  box-shadow: 5px 2px 2px  rgba(13, 94, 172);
+  /* padding: 5px; */
+  
+}
