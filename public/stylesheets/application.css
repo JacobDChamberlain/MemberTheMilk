@@ -247,8 +247,8 @@ flex-column-reverse FOR CHECKBOX AND TASK
   margin-top: 2px;
   margin-left: 4px;
   border: solid rgba(13, 94, 172) 1px;
-	background: white;
-	color: inherit;
+  background: rgb(205, 231, 255);;
+  color: inherit;
 }
 
 .inboxToMoveAround {
@@ -261,20 +261,11 @@ flex-column-reverse FOR CHECKBOX AND TASK
 }
 
 #editListBtn {
-  	/* float: left; */
-	/* min-width: 150px;
-	max-width: 250px; */
-	/* display: block; */
-	margin-top: 3px;
-	/* padding: 1em 2em; */
-	background: white;
-	color: inherit;
-	/* vertical-align: middle; */
-	/* position: relative; */
-	z-index: 1;
-  position: absolute;
-  top: 21px;
+  margin-top: 2px;
+  margin-left: 4px;
   border: solid rgba(13, 94, 172) 1px;
+  background: rgb(205, 231, 255);;
+  color: inherit;
 }
 
 #editListBtn:hover {
@@ -283,16 +274,11 @@ flex-column-reverse FOR CHECKBOX AND TASK
 }
 
 #deleteListBtn {
-	margin-top: 3px;
-  border: white;
-	background: white;
-	color: inherit;
-	z-index: 1;
-  /* padding-bottom: 100px; */
-  position: absolute;
-  top: 21px;
-  left: 70px;
+  margin-top: 2px;
+  margin-left: 4px;
   border: solid rgba(13, 94, 172) 1px;
+  background: rgb(205, 231, 255);;
+  color: inherit;
 }
 
 #deleteListBtn:hover {
@@ -354,8 +340,8 @@ flex-column-reverse FOR CHECKBOX AND TASK
   margin-top: 2px;
   margin-left: 4px;
   border: solid rgba(13, 94, 172) 1px;
-	background: white;
-	color: inherit;
+  background: rgb(205, 231, 255);;
+  color: inherit;
 }
 
 #viewTaskBtn:hover{
