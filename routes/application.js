@@ -11,59 +11,52 @@ const db = require('../db/models')
 //* Query sends the list on the select field.
 router.get('/', requireAuth, asyncHandler(async (req, res) => {
   const userId = req.session.auth.userId;
-
+  const listObject = {};
   //Querries for lists
   const lists = await db.List.findAll({
     where: { userId },
     order: [['createdAt', 'DESC']]
   })
-  const newArr = []
-  console.log("🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊")
-  lists.forEach(list => {
-    console.log(list.id, list.name, list.createdAt, list.userId)
-    let newArr = [];
-    newArr.push(list.id);
-    newArr.push(list.name);
-    console.log(newArr)
-    //Query in here for Every Single List
-  });
 
-  const currId = lists.map(list => {
-    console.log(list.id, list.name, list.createdAt, list.userId)
-    //Query in here for Every Single List
-    let newArr = [];
-    newArr.push(list.id);
-    newArr.push(list.name);
-    console.log(newArr)
-    return newArr;
-  });
-
-
-  // const listTasks = await db.List.findAll({
-  //   where: { userId, lists: },
-  // })
-
-  // const listId = lists
 
   //Queurries for tasks
   const tasks = await db.Task.findAll({
     where: { userId },
     order: [['createdAt', 'DESC']]
   })
-  console.log("🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎")
-  tasks.forEach(task => {
-    console.log(task.id, task.name, task.createdAt, task.listId, task.userId)
-  });
+
+  res.render('application', { title: 'application', lists, tasks }); //lists, tasks
+}));
 
 
-  const listCategorys = await db.Task.findAll({
-    where: { userId, },
+router.post('/', requireAuth, asyncHandler(async (req, res) => {
+
+  const listId = req.body.listId
+  const userId = req.session.auth.userId;
+  const listCategoryName = await db.List.findByPk(listId)
+
+  const listTasks = await db.Task.findAll({
+    where: { userId, listId },
+    order: [['createdAt', 'DESC']]
+  })
+  const lists = await db.List.findAll({
+    where: { userId },
     order: [['createdAt', 'DESC']]
   })
 
+  console.log("/WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW")
+  console.log(userId, listId, listCategoryName.name)
 
-  res.render('application', { title: 'application', lists, tasks, listCategorys }); //lists, tasks
+  //Queurries for tasks
+  const tasks = await db.Task.findAll({
+    where: { userId },
+    order: [['createdAt', 'DESC']]
+  })
+
+  res.render('application', { title: 'application', lists, tasks, listTasks, listCategoryName }); //lists, tasks
+
 }));
+
 
 router.get('/logout', (req, res) => {
   logoutUser(req, res);
