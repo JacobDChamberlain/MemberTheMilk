@@ -11,13 +11,12 @@ const db = require('../db/models')
 //* Query sends the list on the select field.
 router.get('/', requireAuth, asyncHandler(async (req, res) => {
   const userId = req.session.auth.userId;
-  const listObject = {};
+
   //Querries for lists
   const lists = await db.List.findAll({
     where: { userId },
     order: [['createdAt', 'DESC']]
   })
-
 
   //Queurries for tasks
   const tasks = await db.Task.findAll({
@@ -25,7 +24,7 @@ router.get('/', requireAuth, asyncHandler(async (req, res) => {
     order: [['createdAt', 'DESC']]
   })
 
-  res.render('application', { title: 'application', lists, tasks }); //lists, tasks
+  res.render('application', { title: 'Don\'t Forget the Milk', lists, tasks }); //lists, tasks
 }));
 
 
@@ -53,7 +52,7 @@ router.post('/', requireAuth, asyncHandler(async (req, res) => {
     order: [['createdAt', 'DESC']]
   })
 
-  res.render('application', { title: 'application', lists, tasks, listTasks, listCategoryName }); //lists, tasks
+  res.render('application', { title: 'Don\'t Forget the Milk', lists, tasks, listTasks, listCategoryName }); //lists, tasks
 
 }));
 
