@@ -1,26 +1,35 @@
 body {
-  background-color: green;
+  background-color: rgba(13, 94, 172);
+}
+
+h1 {
+  color: white;
+  align-content: center;
+  text-align: center;
+  border: solid 10px white;
+  font: bold 4rem "Fira Sans", serif;
 }
 
 #applicationPageContainer {
   display: grid;
-  grid-template-columns: 1fr 2fr 2fr;
+  grid-template-columns: 1fr 2fr 1fr;
 }
 
 #navbarLeft {
   border-color: brown;
-  background-color: aqua;
+  background-color: rgba(215, 231, 245);
   display: flex;
   flex-direction: column;
 
 }
 
 #tasksPage {
-  background-color: aquamarine;
+  background-color: white;
+  /* border: 1rem solid; */
 }
 
 #listSummaryPage {
-  background-color: blanchedalmond;
+  background-color: rgba(215, 231, 245);
 }
 
 
@@ -30,6 +39,46 @@ body {
   align-items: center;
 }
 
+/* .list-group-item { */
+  /* margin-bottom: 100px; */
+  /* font-weight: bold; */
+  /* font-size: 10px; */
+  /* font-style: italic; */
+/* } */
+
+/* THIS TARGETS THE TASK */
+#addLiTask {
+  margin: 5px;
+  
+  /* font-weight: bold; */
+  font: bold 14pt "Helvetica", serif;
+  /* margin-bottom: 100px; */
+
+  /* margin-bottom: 1px; */
+
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* border: solid; */
+  /* box-shadow: 3px 1px 1px  rgba(13, 94, 172); */
+  border: 1px solid rgba(215, 231, 245);
+  padding-left: 5px;
+  margin-right: 10px;
+}
+
+.checkBox {
+  margin-left: 5px;
+}
+
+li {
+  list-style-type: none;
+}
+
+
+#addLiTask:hover {
+  box-shadow: 3px 1px 1px  rgba(13, 94, 172);
+  /* padding: 5px; */
+  
+}
 /* #cancelButton {
   
 }
@@ -67,3 +116,130 @@ body {
 /* 
 flex-column-reverse FOR CHECKBOX AND TASK
 */
+
+
+/* .grid {
+  display: grid
+} */
+
+/* Working on the buttons here */
+/*  */
+/*  */
+/*  */
+
+#logoutBtn {
+	/* float: left; */
+	/* min-width: 150px;
+	max-width: 250px; */
+	/* display: block; */
+	/* margin: 1em; */
+	/* padding: 1em 2em; */
+	/* border: white;
+	background: white;
+	color: inherit; */
+	/* vertical-align: middle; */
+	/* position: relative; */
+	/* z-index: 1; */
+}
+
+#sadfasd {
+  margin-top: -100px;
+}
+
+#listLists {
+  margin-bottom: 100px;
+  margin-left: -15px;
+}
+
+#move5px {
+  margin-left: 5px;
+}
+
+#logoutBtn:hover {
+  color: rgba(13, 94, 172);
+  border-color: blue;
+}
+
+.listNameName {
+  margin-bottom: -10px;
+}
+
+.listContainer {
+  margin-bottom: 120px;
+}
+
+#addTaskRow {
+  margin-left: 5px
+}
+
+#addListBttn {
+  margin-top: 2px;
+  margin-left: 4px;
+	border: white;
+	background: white;
+	color: inherit;
+}
+
+.inboxToMoveAround {
+  margin-bottom: 2px;
+}
+
+#addListBttn:hover {
+  color: rgba(13, 94, 172);
+  border-color: blue;
+}
+
+#editListBtn {
+  	/* float: left; */
+	/* min-width: 150px;
+	max-width: 250px; */
+	/* display: block; */
+	margin-top: 3px;
+	/* padding: 1em 2em; */
+	border: white;
+	background: white;
+	color: inherit;
+	/* vertical-align: middle; */
+	/* position: relative; */
+	z-index: 1;
+  position: absolute;
+  top: 21px;
+}
+
+#editListBtn:hover {
+  color: rgba(13, 94, 172);
+  border-color: blue;
+}
+
+#deleteListBtn {
+	margin-top: 3px;
+  border: white;
+	background: white;
+	color: inherit;
+	z-index: 1;
+  /* padding-bottom: 100px; */
+  position: absolute;
+  top: 21px;
+  left: 70px;
+}
+
+#deleteListBtn:hover {
+  color: rgba(13, 94, 172);
+  border-color: blue;
+}
+
+.editDeleteBtnContainer {
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  position: relative;
+}
+
+.editTheInput{
+  /* display:block; */
+  position: absolute;
+  /* top: 0px; */
+  left: 0px;
+  /* bottom: 40px; */
+}

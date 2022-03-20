@@ -6,6 +6,7 @@ window.addEventListener("load", (event) => {
   loginButton.addEventListener("click", e => {
     window.location.href = "/login"
   })
+  
   const demoUser = document.getElementById("demoBtn")
   demoUser.addEventListener("click", e => {
     window.location.href = "/demo"

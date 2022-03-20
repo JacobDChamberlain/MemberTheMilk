@@ -103,9 +103,12 @@ window.addEventListener("load", (event) => {
   //   const inputField = document.getElementById('addListInput');
 
   //   inputField.type = "";
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> main
   // })
 
 

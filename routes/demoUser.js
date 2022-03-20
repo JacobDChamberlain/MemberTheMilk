@@ -9,19 +9,18 @@ const { csrfProtection, asyncHandler } = require('./utils');
 
 
 router.get('/', csrfProtection, asyncHandler(async (req, res) => {
+  const email = 'demoUser@gmail.com';
+  const password = 'password'
 
-    const email = 'demoUser@gmail.com';
-    const password = 'password'
+  const user = await db.User.findOne({ where: { email } });
 
-    const user = await db.User.findOne({ where: { email } });
-    if (user) {
-        const match = await bcrypt.compare(password, user.hashedPassword.toString());
-        if (match) {
-            loginUser(req, res, user);
-            res.redirect('/application');
-        }
+  if (user) {
+    const match = await bcrypt.compare(password, user.hashedPassword.toString());
+    if (match) {
+      loginUser(req, res, user);
+      return res.redirect('/application');
     }
-
+  }
 }));
 
 module.exports = router
