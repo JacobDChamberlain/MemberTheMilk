@@ -277,3 +277,37 @@ flex-column-reverse FOR CHECKBOX AND TASK
   /* padding: 5px; */
   
 }
+
+#listSummaryTitle{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 30px;
+  display: flex;
+
+  flex-direction: center;
+  justify-content: center;
+  
+}
+
+#listCategoryNameLabel{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 15px;
+  display: flex;
+
+  flex-direction: center;
+  justify-content: center;
+}
+
+#currTextCount {
+  margin: 10px;
+  border: 2px solid;
+}
+
+#listSummaryPage {
+  display: flex;
+  flex-direction: column;
+}
+
+#currListName {
+  margin: 10px;
+  border: 2px solid;
+}

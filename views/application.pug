@@ -96,12 +96,13 @@ append head
 
       br
     div(id='listSummaryPage')
-      label(for='listSummaryPage') List Summary 
+      label(for='listSummaryPage' id= 'listSummaryTitle') List Summary 
       br
       br
       if(listCategoryName)
-        label(id='listCategoryNameLabel') Current List
+        label(id='listCategoryNameLabel') 
           textarea(id='currListName')= listCategoryName.name
+          br
           textarea(id= 'currTextCount')= listTasks.length
     
       div(id='listTaskDisplay')

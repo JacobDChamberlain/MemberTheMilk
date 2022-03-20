@@ -24,7 +24,7 @@ router.get('/', requireAuth, asyncHandler(async (req, res) => {
     order: [['createdAt', 'DESC']]
   })
 
-  res.render('application', { title: 'Don\'t Forget the Milk', lists, tasks }); //lists, tasks
+  res.render('application', { lists, tasks }); //lists, tasks
 }));
 
 
@@ -52,7 +52,7 @@ router.post('/', requireAuth, asyncHandler(async (req, res) => {
     order: [['createdAt', 'DESC']]
   })
 
-  res.render('application', { title: 'Don\'t Forget the Milk', lists, tasks, listTasks, listCategoryName }); //lists, tasks
+  res.render('application', { lists, tasks, listTasks, listCategoryName }); //lists, tasks
 
 }));
 
