@@ -52,9 +52,38 @@ router.post('/', requireAuth, asyncHandler(async (req, res) => {
     order: [['createdAt', 'DESC']]
   })
 
+
   res.render('application', { lists, tasks, listTasks, listCategoryName }); //lists, tasks
 
 }));
+
+router.post('/search', requireAuth, asyncHandler(async (req, res) => {
+
+  const userId = req.session.auth.userId;
+  let { name } = req.body
+  name = name.toLowerCase()
+
+  const lists = await db.List.findAll({
+    where: { userId },
+    order: [['createdAt', 'DESC']]
+  })
+
+  // Queurries for tasks
+  const tasks = await db.Task.findAll({
+    where: { userId },
+    order: [['createdAt', 'DESC']]
+  })
+
+
+  const searches = await db.Task.findAll({
+    where: { userId, name }
+  })
+
+
+  res.render('application', { lists, tasks, searches }); //lists, tasks
+
+}));
+
 
 
 router.get('/logout', (req, res) => {

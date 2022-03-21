@@ -144,11 +144,12 @@ flex-column-reverse FOR CHECKBOX AND TASK
   margin-left: 5px;
 }
 
-/* #logoutBtnDiv {
+#logoutBtnDiv {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   align-items: flex-end;
-} */
+  justify-content: space-between;
+}
 
 #logoutBtn {
   margin-top: 2px;
@@ -164,6 +165,28 @@ flex-column-reverse FOR CHECKBOX AND TASK
 
 #logoutBtn:hover {
   color: red;
+  border-color: blue;
+}
+
+#searchBox {
+  width:300px;
+  height: 40px;
+ 
+}
+
+#searchBtn{
+
+  width:100px;
+  height: 40px;
+  margin-top: 2px;
+  margin-left: 2px;
+  border: solid rgba(13, 94, 172) 1px;
+  background: rgb(205, 231, 255);;
+  color: inherit;
+}
+
+#searchBtn:hover{
+  color: rgba(13, 94, 172);
   border-color: blue;
 }
 
