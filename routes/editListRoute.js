@@ -10,8 +10,8 @@ router.post('/', asyncHandler(async (req, res) => {
 
     const editList = await db.List.findByPk(listId);
 
-    console.log('🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊');
-    console.log(editList)
+    // console.log('🍊🍊🍊🍊🍊🍊🍊🍊🍊🍊');
+    // console.log(editList)
 
     //Save is for updating
     await editList.update({ name })

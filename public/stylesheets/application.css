@@ -6,7 +6,9 @@ h1 {
   color: white;
   align-content: center;
   text-align: center;
-  border: solid 10px white;
+  /* border: solid 10px white; */
+  border-top: solid 10px white;
+  border-bottom: solid 10px white;
   font: bold 4rem "Fira Sans", serif;
 }
 
@@ -49,6 +51,7 @@ h1 {
 /* THIS TARGETS THE TASK */
 #addLiTask {
   margin: 5px;
+  margin-bottom: 10px;
   
   /* font-weight: bold; */
   font: bold 14pt "Helvetica", serif;
@@ -141,16 +144,26 @@ flex-column-reverse FOR CHECKBOX AND TASK
   margin-left: 5px;
 }
 
+/* #logoutBtnDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+} */
+
 #logoutBtn {
   margin-top: 2px;
   margin-left: 4px;
   border: solid rgba(13, 94, 172) 1px;
   background: rgb(205, 231, 255);;
   color: inherit;
+  margin: 1em;
+	padding: 1em 2em;
+  /* display: flex; */
+  /* flex-direction: flex-end; */
 }
 
 #logoutBtn:hover {
-  color: rgba(13, 94, 172);
+  color: red;
   border-color: blue;
 }
 
@@ -230,7 +243,10 @@ flex-column-reverse FOR CHECKBOX AND TASK
   border-color: blue;
 }
 
-
+#listDropdownDisplay {
+  /* font: bold; */
+  font-size: 23px;
+}
 
 .listNameName {
   margin-bottom: -10px;
@@ -313,6 +329,7 @@ flex-column-reverse FOR CHECKBOX AND TASK
 
 #taskDisplayName {
   margin: 5px;
+  margin-bottom: 10px;
   
   /* font-weight: bold; */
   font: 14pt "Helvetica", serif;
@@ -358,12 +375,15 @@ flex-column-reverse FOR CHECKBOX AND TASK
 
 #currListName{
   font-weight: bold;
-margin: 10px;
+  margin: 10px;
+  /* text-decoration: underline; */
+  font-size: 20px;
 }
 
 #currTextCount {
   margin: 10px;
-border: solid 2px;
+  font-weight: bold;
+  /* border: solid 2px; */
 }
 
 #listSummaryTitle {
@@ -378,9 +398,10 @@ border: solid 2px;
 }
 
 #addListInputlabel{
- 
+  /* text-decoration: underline; */
   font-weight: bold;
   margin-left: 10px;
+  font-size: 20px;
 }
 
 #viewTaskForm{
@@ -390,9 +411,13 @@ border: solid 2px;
 #inboxDropDownLabel{
   font-weight: bold;
   margin: 10px;
+  /* text-decoration: underline; */
+  font-size: 30px;
 }
 
 #addNewTaskLabel{
   font-weight: bold;
   margin: 10px;
+  /* text-decoration: underline; */
+  font-size: 30px;
 }
