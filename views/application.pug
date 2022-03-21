@@ -50,6 +50,9 @@ block content
       //- img(src='./blahBlahBlah')
       div(id="logoutBtnDiv")
         button(id='logoutBtn') Sign Out
+        form(action='/application/search' method='post' id="viewTaskForm")
+          input(tpye='text' name='name' placeholder='search for tasks here' id='searchBox' required)
+          button(id='searchBtn' type='submit') Search 
       form(action='/application' method='post')
       //- search(id='searchTask')
       //- button(id='incompleteBtn') Incomplete
@@ -68,6 +71,7 @@ block content
 
       div(id='taskDisplay')
         ul(name= "listId" required)
+        if(tasks)
           each task in tasks
             li(id= 'addLiTask')= task.name
               //- input(type='checkbox' name='task' id=`checkBox-${task.id}`)
@@ -77,7 +81,8 @@ block content
               label(type= 'text' class= 'renameTaskLabel' ) Rename Tasks Below
               form(action="/editTask" method="post" id="editTaskSubmitForm")
                 input(type='text' name= 'name' id='addTaskTask' placeholder= 'rename task here' required)
-                //- select(name="listId" required)
+                //- 
+                select(name="listId" required)
                 //-   each list in lists
                 //-     option(name="listId" id='optionListName' value=list.id)= list.name
                 input(type='hidden' name='taskId' value=task.id)
@@ -98,8 +103,10 @@ block content
 
       br
     div(id='listSummaryPage')
-      label(for='listSummaryPage' id= 'listSummaryTitle') List Summary 
+      if(listTasks)
+        label(for='listSummaryPage' id= 'listSummaryTitle') List Summary 
       br
+      
       if(listCategoryName)
         label(id='listCategoryNameLabel') 
           h2(id='currListName')= listCategoryName.name += ':'
@@ -111,6 +118,26 @@ block content
           each task in listTasks
             li(name='taskId' id='taskDisplayName' value=task.id)= task.name
               //- input(type='checkbox' name='task' id=`checkBox-${task.id}`)
+              br
+              form(action="/editTask" method="post" id="editTaskSubmitForm")
+                label(type= 'text' class= 'renameTaskLabel') Edit Tasks Below 
+                br
+                input(type='text' name= 'name' id='addTaskTask' placeholder= 'rename task here' required)
+                //- select(name="listId" required)
+                //-   each list in lists
+                //-     option(name="listId" id='optionListName' value=list.id)= list.name
+                input(type='hidden' name='taskId' value=task.id)
+                button(id='editTaskBtn' type="submit") Rename
+              form(action="/deleteTask" method="post" id="deleteTaskForm")
+                input(type='hidden' name='taskId' value=task.id)
+                button(id='deleteTaskBtn' type='submit') Delete Task
+        
+        if(searches)
+          label(for='listSummaryPage' id= 'listSummaryTitle')  Search Results
+          each task in searches
+            li(name='taskId' id='taskDisplayName' value=task.id)= task.name
+              //- input(type='checkbox' name='task' id=`checkBox-${task.id}`)
+    
               br
               form(action="/editTask" method="post" id="editTaskSubmitForm")
                 label(type= 'text' class= 'renameTaskLabel') Edit Tasks Below 
