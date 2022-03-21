@@ -61,7 +61,6 @@ router.post('/search', requireAuth, asyncHandler(async (req, res) => {
 
   const userId = req.session.auth.userId;
   let { name } = req.body
-  name = name.toLowerCase()
 
   const lists = await db.List.findAll({
     where: { userId },
