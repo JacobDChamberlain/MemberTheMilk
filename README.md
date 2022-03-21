@@ -14,7 +14,7 @@ Logged in users can:
 * Add/Create Lists
 * Update/Delete Lists
 * Able to view a summary of their selected List
-* Able to search for Tasks
+* Able to search for matched (case sensitive) Tasks 
 
 # How to start the development enviornment
 
@@ -33,6 +33,7 @@ Logged in users can:
 * Git
 * Javascript
 * NodeJS
+* Sequelize
 * Pug
 * Express
 * Heroku
@@ -41,7 +42,13 @@ Logged in users can:
 * Postgresql
 
 # Create, Read, Update and Delete Tasks
-img goes here
+![CRUD](public/images/defaultAppPage.PNG "Project's CRUD Features")
+
+# List Summary
+![List Summary](public/images/listSummaryAppPage.PNG "Project's List Summary")
+
+# Search Feature
+![Search Feature](public/images/searchResultAppPage.PNG "Project's Search Feature")
 
 # Database Schema
 ![Database Schema](/public/images/grpMod4DbSchema.png "Project's Database Schema")
