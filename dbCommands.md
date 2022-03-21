@@ -1,4 +1,4 @@
-commands.md for mod4 grp proj
+commands.md for mod4 grp proj.
 
 npx dotenv sequelize db:create
 
