@@ -69,7 +69,7 @@ block content
         ul(name= "listId" required)
           each task in tasks
             li(id= 'addLiTask')= task.name
-              input(type='checkbox' name='task' id=`checkBox-${task.id}`)
+              //- input(type='checkbox' name='task' id=`checkBox-${task.id}`)
               //- addTaskTask and editTaskSubmitForm is hidden in css (Our edit/rename)
               br
               label(type= 'text' class= 'renameTaskLabel' ) Rename Tasks Below
