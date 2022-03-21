@@ -1,5 +1,5 @@
 window.addEventListener("load", (event) => {
-  console.log("hello from application ===> javascript")
+  // console.log("hello from application ===> javascript")
 
 
   //* Add Task Functionality

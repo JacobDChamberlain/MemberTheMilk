@@ -1,5 +1,5 @@
 window.addEventListener("load", (event) => {
-  console.log("hello from signUp ===> javascript!")
+  // console.log("hello from signUp ===> javascript!")
 
 
   const loginButton = document.getElementById("loginBtn")

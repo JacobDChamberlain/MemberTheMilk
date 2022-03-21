@@ -15,11 +15,11 @@ block content
       form(action="/addList" method="post")
         //- input(type='hidden' name='_csrf' value=csrfToken)
         input(type='hidden' name='userId' value=locals.user.id)
-        label(for='name' id='addListInputlabel') Add New List Here:
+        label(for='name' id='addListInputlabel') Add List:
         br
         input(type='text' name='name' id='addListInput' placeholder= 'add list ...' required)
         button(id='addListBttn' type="submit") Add List
-      label(id='currListName' ) Choose a List to View Tasks 📮
+      label(id='currListName' ) View List:
       form(action='/application' method='post' id="viewTaskForm")
         select(name="listId" required)
           each list in lists
@@ -29,7 +29,7 @@ block content
       //-   each list in lists
       //-     option(value=list.id)= list.name
       br
-      label(for='inboxDropDown' id='inboxDropDownLabel') Lists 📃
+      label(for='inboxDropDown' id='inboxDropDownLabel') Lists:
       ul(id='listsPage')
         each list in lists
           li(name= 'listId' id='listDropdownDisplay' value=list.id)= list.name
@@ -48,7 +48,8 @@ block content
 
     div(id='tasksPage')
       //- img(src='./blahBlahBlah')
-      button(id='logoutBtn') Sign Out
+      div(id="logoutBtnDiv")
+        button(id='logoutBtn') Sign Out
       form(action='/application' method='post')
       //- search(id='searchTask')
       //- button(id='incompleteBtn') Incomplete
@@ -57,7 +58,7 @@ block content
       form(action="/addTask" method="post")
         //- input(type='hidden' name='_csrf' value=csrfToken)
         input(type='hidden' name='userId' value=locals.user.id)
-        label(for='name' id='addNewTaskLabel') Add New Task Here
+        label(for='name' id='addNewTaskLabel') Add Task:
         br
         input(type='text' name='name' id='addTaskInput' placeholder = 'add task ...' required)
         select(name="listId" required)
@@ -69,17 +70,18 @@ block content
         ul(name= "listId" required)
           each task in tasks
             li(id= 'addLiTask')= task.name
-              input(type='checkbox' name='task' id=`checkBox-${task.id}`)
+              //- input(type='checkbox' name='task' id=`checkBox-${task.id}`)
               //- addTaskTask and editTaskSubmitForm is hidden in css (Our edit/rename)
+              br
               br
               label(type= 'text' class= 'renameTaskLabel' ) Rename Tasks Below
               form(action="/editTask" method="post" id="editTaskSubmitForm")
                 input(type='text' name= 'name' id='addTaskTask' placeholder= 'rename task here' required)
-                select(name="listId" required)
-                  each list in lists
-                    option(name="listId" id='optionListName' value=list.id)= list.name
+                //- select(name="listId" required)
+                //-   each list in lists
+                //-     option(name="listId" id='optionListName' value=list.id)= list.name
                 input(type='hidden' name='taskId' value=task.id)
-                button(id='editTaskBtn' type="submit") Edit Task
+                button(id='editTaskBtn' type="submit") Rename Task
               form(action="/deleteTask" method="post" id="deleteTaskForm")
                 input(type='hidden' name='taskId' value=task.id)
                 button(id='deleteTaskBtn' type='submit') Delete Task
@@ -100,23 +102,23 @@ block content
       br
       if(listCategoryName)
         label(id='listCategoryNameLabel') 
-          textarea(id='currListName')= listCategoryName.name
+          h2(id='currListName')= listCategoryName.name += ':'
           br
-          textarea(id= 'currTextCount')= listTasks.length
+          h2(id= 'currTextCount')= listTasks.length
     
       div(id='listTaskDisplay')
         if(listTasks)
           each task in listTasks
             li(name='taskId' id='taskDisplayName' value=task.id)= task.name
-              input(type='checkbox' name='task' id=`checkBox-${task.id}`)
+              //- input(type='checkbox' name='task' id=`checkBox-${task.id}`)
               br
               form(action="/editTask" method="post" id="editTaskSubmitForm")
                 label(type= 'text' class= 'renameTaskLabel') Edit Tasks Below 
                 br
                 input(type='text' name= 'name' id='addTaskTask' placeholder= 'rename task here' required)
-                select(name="listId" required)
-                  each list in lists
-                    option(name="listId" id='optionListName' value=list.id)= list.name
+                //- select(name="listId" required)
+                //-   each list in lists
+                //-     option(name="listId" id='optionListName' value=list.id)= list.name
                 input(type='hidden' name='taskId' value=task.id)
                 button(id='editTaskBtn' type="submit") Rename
               form(action="/deleteTask" method="post" id="deleteTaskForm")

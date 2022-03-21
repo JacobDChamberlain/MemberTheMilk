@@ -40,6 +40,7 @@ body{
   /* background-image: url(./ghibli-wallhaven.png); */
 	background-size: cover;
 	background-repeat: no-repeat;
+  max-height: fit-content;
 }
 
 #welcomeText{
@@ -155,3 +156,56 @@ h1 {
   justify-content: center;
 }
 
+#footerContainer {
+  margin-top: 120px;
+  /* color: white; */
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-evenly; */
+  
+  /* position: absolute;
+  bottom: 50px; */
+  /* right: 20px; */
+  background: rgba(13, 94, 172);
+  align-items: center;
+  color: white;
+}
+
+#contributions {
+  font-weight: bold;
+  color: white;
+  text-decoration: underline;
+  /* padding-left: 60px; */
+}
+
+#namesOfContributors {
+  padding-left: 60px;
+}
+
+#githubLinks {
+  font-weight: bold;
+  color: white;
+  text-decoration: underline;
+  padding-left: 50px;
+}
+
+#jacob {
+  background: rgba(13, 94, 172);
+  color: white;
+}
+
+#noel {
+  background: rgba(13, 94, 172);
+  color: white;
+}
+
+#bhavik {
+  background: rgba(13, 94, 172);
+  color: white;
+}
+
+/* margin-top: 2px;
+margin-left: 4px;
+border: solid rgba(13, 94, 172) 1px;
+background: rgb(205, 231, 255);
+color: inherit; */

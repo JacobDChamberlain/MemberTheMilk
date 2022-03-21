@@ -10,7 +10,7 @@ const { csrfProtection, asyncHandler } = require('./utils');
 
 /* GET login page. */
 router.get('/', csrfProtection, (req, res) => {
-  res.render('login', { title: 'Login Page', csrfToken: req.csrfToken() });
+  res.render('login', { title: 'Login', csrfToken: req.csrfToken() });
 });
 
 const loginValidators = [

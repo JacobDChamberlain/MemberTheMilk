@@ -43,8 +43,8 @@ router.post('/', requireAuth, asyncHandler(async (req, res) => {
     order: [['createdAt', 'DESC']]
   })
 
-  console.log("/WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW")
-  console.log(userId, listId, listCategoryName.name)
+  // console.log("/WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW")
+  // console.log(userId, listId, listCategoryName.name)
 
   //Queurries for tasks
   const tasks = await db.Task.findAll({

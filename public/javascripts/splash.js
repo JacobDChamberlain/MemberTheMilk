@@ -1,5 +1,5 @@
 window.addEventListener("load", (event) => {
-  console.log("Member The Milk")
+  // console.log("Member The Milk")
 
   const loginButton = document.getElementById("loginBtn")
   loginButton.addEventListener("click", e => {
