@@ -73,10 +73,15 @@ router.post('/search', requireAuth, asyncHandler(async (req, res) => {
     order: [['createdAt', 'DESC']]
   })
 
+  console.log('HHHHHHHHHHHHHHHHHHHHHHHHHHHH')
+  console.log(name)
+  console.log(req.body)
+
 
   const searches = await db.Task.findAll({
     where: { userId, name }
   })
+
 
 
   res.render('application', { lists, tasks, searches }); //lists, tasks
