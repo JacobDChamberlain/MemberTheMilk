@@ -1,4 +1,4 @@
-//- xtends layout
+//- extends layout
 
 append head
   //- add page specific styles by appending to the head
@@ -15,7 +15,7 @@ block content
       form(action="/addList" method="post")
         //- input(type='hidden' name='_csrf' value=csrfToken)
         input(type='hidden' name='userId' value=locals.user.id)
-        label(for='name') Add New List Here:
+        label(for='name' id='addListInputlabel') Add New List Here:
         br
         input(type='text' name='name' id='addListInput' placeholder= 'add list ...' required)
         button(id='addListBttn' type="submit") Add List
@@ -29,18 +29,17 @@ block content
       //-   each list in lists
       //-     option(value=list.id)= list.name
       br
-      label(for='inboxDropDown') Lists 📃
-
+      label(for='inboxDropDown' id='inboxDropDownLabel') Lists 📃
       ul(id='listsPage')
         each list in lists
           li(name= 'listId' id='listDropdownDisplay' value=list.id)= list.name
             form(action="/editList" method="post" id="editListSubmitForm")
               input(type='hidden' name='listId' value=list.id)
               input(type='text' name= 'name' id='addListList' placeholder= 'Rename List' required)
-            button(id='editListBtn' type="submit") Edit List
+              button(id='editListBtn' type="submit") Edit List
             form(action="/deleteList" method="post" id="deleteListForm")
               input(type='hidden' name='listId' value=list.id)
-            button(id='deleteListBtn' type='submit') Delete List
+              button(id='deleteListBtn' type='submit') Delete List
         //- button(id='addListBtn' innerText='Add') Add
       //- input(type='hidden' id='addListInput' placeholder='Add List')
           //- This is for the user to add *Build in the End*
@@ -52,13 +51,13 @@ block content
       button(id='logoutBtn') Sign Out
       form(action='/application' method='post')
       //- search(id='searchTask')
-      button(id='incompleteBtn') Incomplete
-      button(id='completeBtn') Completed
+      //- button(id='incompleteBtn') Incomplete
+      //- button(id='completeBtn') Completed
       br
       form(action="/addTask" method="post")
         //- input(type='hidden' name='_csrf' value=csrfToken)
         input(type='hidden' name='userId' value=locals.user.id)
-        label(for='name') Add New Task Here
+        label(for='name' id='addNewTaskLabel') Add New Task Here
         br
         input(type='text' name='name' id='addTaskInput' placeholder = 'add task ...' required)
         select(name="listId" required)
@@ -92,13 +91,12 @@ block content
         input(type= 'text' id='taskRenameInputField' placeholder= 'Rename Tasks' required)
         input(id='checkbox' name='task' checked)
         div(id='cancelSubmit')
-          button(id='cancelButton' type="button") Cancel
+         button(id='cancelButton' type="button") Cancel
           button(id='submitButton' type="button") Submit
 
       br
     div(id='listSummaryPage')
       label(for='listSummaryPage' id= 'listSummaryTitle') List Summary 
-      br
       br
       if(listCategoryName)
         label(id='listCategoryNameLabel') 

@@ -349,3 +349,50 @@ flex-column-reverse FOR CHECKBOX AND TASK
   color: rgba(13, 94, 172);
   border-color: blue;
 }
+
+#listCategoryNameLabel {
+  display: flex;
+  flex-direction: center;
+  
+}
+
+#currListName{
+  font-weight: bold;
+margin: 10px;
+}
+
+#currTextCount {
+  margin: 10px;
+border: solid 2px;
+}
+
+#listSummaryTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 30px;
+}
+
+#addListInput{
+  margin-left: 10px;
+}
+
+#addListInputlabel{
+ 
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+#viewTaskForm{
+  margin: 10px;
+}
+
+#inboxDropDownLabel{
+  font-weight: bold;
+  margin: 10px;
+}
+
+#addNewTaskLabel{
+  font-weight: bold;
+  margin: 10px;
+}
